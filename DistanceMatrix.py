@@ -25,7 +25,22 @@ def  places_distance_matrix(ApiKey, Places):
     results=gmaps.distance_matrix(Places,Places)
     return (extract_distance_matrix(results))
 
+def construct_rules(File,ApiKey,Places):
+    Distance_Matrix= places_distance_matrix(ApiKey,Places)
+
+    with open(File,'w') as f:
+        for i,origin in enumerate(Places):
+            for j,destination in enumerate(Places):
+                if(origin!=destination):
+                    f.write("pode_ir({},{},{})\n".format(origin,destination,Distance_Matrix[i-1][j-1]))
+
+
+#pode_ir(cidade_origem,cidade_destino,custo).
 
 ##Test A
-#a= places_distance_matrix("AIzaSyDnQndjPZDiERjXPdOmA5TAy5sVzk2rFqc",['Ribeirao Preto','Cravinhos','Batatais','Sao Carlos','Bauru','Rifaina','Maringa'])
+#cities=['Ribeirao Preto','Cravinhos','Batatais','Sao Carlos','Bauru','Rifaina','Maringa']
+#a= places_distance_matrix("AIzaSyDnQndjPZDiERjXPdOmA5TAy5sVzk2rFqc",cities)
 #print(a)
+##Test B
+#cities=['Ribeirao Preto','Cravinhos','Batatais','Sao Carlos','Bauru','Rifaina','Maringa']
+#b=construct_rules("regras.pl","AIzaSyDnQndjPZDiERjXPdOmA5TAy5sVzk2rFqc",cities)

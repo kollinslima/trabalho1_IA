@@ -34,10 +34,7 @@ def construct_rules(File,ApiKey,Places):
             print(origin)
             for j,destination in enumerate(Places):
                 if(origin!=destination):
-                    print(j)
-                    print(destination)
-
-                    f.write("pode_ir({},{},{})\n".format(origin,destination,Distance_Matrix[i][j]))
+                    #f.write("pode_ir({},{},{})\n".format(origin,destination,Distance_Matrix[i-1][j-1]))
 
 
 #pode_ir(cidade_origem,cidade_destino,custo).

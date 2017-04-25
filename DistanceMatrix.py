@@ -30,18 +30,11 @@ def construct_rules(File,ApiKey,Places):
 
     with open(File,'w') as f:
         for i,origin in enumerate(Places):
-            print(i)
-            print(origin)
             for j,destination in enumerate(Places):
                 if(origin!=destination):
-                    print(j)
-                    print(destination)
-
                     #Precisa estar entre aspas para não ser usada como váriavel em prolog
                     f.write("pode_ir(\"{}\",\"{}\",{})\n".format(origin,destination,Distance_Matrix[i][j]))
 
-
-#pode_ir(cidade_origem,cidade_destino,custo).
 
 ##Test A
 #cities=['Ribeirao Preto','Cravinhos','Batatais','Sao Carlos','Bauru','Rifaina','Maringa']

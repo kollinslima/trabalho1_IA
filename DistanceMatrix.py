@@ -37,7 +37,8 @@ def construct_rules(File,ApiKey,Places):
                     print(j)
                     print(destination)
 
-                    f.write("pode_ir({},{},{})\n".format(origin,destination,Distance_Matrix[i][j]))
+                    #Precisa estar entre aspas para não ser usada como váriavel em prolog
+                    f.write("pode_ir(\"{}\",\"{}\",{})\n".format(origin,destination,Distance_Matrix[i][j]))
 
 
 #pode_ir(cidade_origem,cidade_destino,custo).

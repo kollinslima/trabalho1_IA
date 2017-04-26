@@ -19,6 +19,10 @@
 #### Arch Linux
 `sudo pacman -S swi-prolog`
 
+### Pip (Gerenciador de Pacotes Python)
+
+Caso ainda não exista o comando `pip`, siga <a href="https://pip.pypa.io/en/stable/installing/"> estas instruções</a>
+
 ### Google Maps Python API
 
 #### Usando Pip 

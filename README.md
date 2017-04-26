@@ -1,4 +1,4 @@
-#Trabalho Busca Cega/Busca Informada
+# Trabalho Busca Cega/Busca Informada
 
 ## Requerimentos
 

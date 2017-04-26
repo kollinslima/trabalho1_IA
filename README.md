@@ -1,24 +1,25 @@
-<h1 align="center">Trabalho Busca Cega/Busca Informada</h1>
-###Requerimentos
+#Trabalho Busca Cega/Busca Informada
 
-##Python  3
+## Requerimentos
 
-#Ubuntu
+### Python  3
+
+#### Ubuntu
 
 `sudo apt-get install software-properties-common`
 
-#Arch Linux
+#### Arch Linux
 
 `sudo pacman -S python3`
 
-##Swi Prolog
+### Swi Prolog
 
-#Ubuntu
+#### Ubuntu
 
-#Arch Linux
+#### Arch Linux
 `sudo pacman -S swi-prolog`
 
-##Google Maps Python API
+### Google Maps Python API
 
-#Usando Pip 
+#### Usando Pip 
 `sudo pip install googlemaps`

@@ -1,3 +1,4 @@
+# coding=utf-8
 import googlemaps
 
 #To do list 
@@ -33,7 +34,7 @@ def construct_rules(File,ApiKey,Places):
             for j,destination in enumerate(Places):
                 if(origin!=destination):
                     #Precisa estar entre aspas para não ser usada como váriavel em prolog
-                    f.write("pode_ir(\"{}\",\"{}\",{})\n".format(origin,destination,Distance_Matrix[i][j]))
+                    f.write("pode_ir(\"{}\",\"{}\",{}).\n".format(origin,destination,Distance_Matrix[i][j]))
 
 
 ##Test A

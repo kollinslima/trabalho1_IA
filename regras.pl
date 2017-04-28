@@ -40,3 +40,45 @@ pode_ir("Maringa","Batatais",595688).
 pode_ir("Maringa","Sao Carlos",541473).
 pode_ir("Maringa","Bauru",391994).
 pode_ir("Maringa","Rifaina",708730).
+linha_reta("Ribeirao Preto","Cravinhos",18847).
+linha_reta("Ribeirao Preto","Batatais",30687).
+linha_reta("Ribeirao Preto","Sao Carlos",92809).
+linha_reta("Ribeirao Preto","Bauru",126665).
+linha_reta("Ribeirao Preto","Rifaina",121724).
+linha_reta("Ribeirao Preto","Maringa",249206).
+linha_reta("Cravinhos","Ribeirao Preto",18847).
+linha_reta("Cravinhos","Batatais",49534).
+linha_reta("Cravinhos","Sao Carlos",73961).
+linha_reta("Cravinhos","Bauru",107818).
+linha_reta("Cravinhos","Rifaina",140572).
+linha_reta("Cravinhos","Maringa",230358).
+linha_reta("Batatais","Ribeirao Preto",30687).
+linha_reta("Batatais","Cravinhos",49534).
+linha_reta("Batatais","Sao Carlos",123496).
+linha_reta("Batatais","Bauru",157352).
+linha_reta("Batatais","Rifaina",91037).
+linha_reta("Batatais","Maringa",279893).
+linha_reta("Sao Carlos","Ribeirao Preto",92809).
+linha_reta("Sao Carlos","Cravinhos",73961).
+linha_reta("Sao Carlos","Batatais",123496).
+linha_reta("Sao Carlos","Bauru",33856).
+linha_reta("Sao Carlos","Rifaina",214533).
+linha_reta("Sao Carlos","Maringa",156397).
+linha_reta("Bauru","Ribeirao Preto",126665).
+linha_reta("Bauru","Cravinhos",107818).
+linha_reta("Bauru","Batatais",157352).
+linha_reta("Bauru","Sao Carlos",33856).
+linha_reta("Bauru","Rifaina",248390).
+linha_reta("Bauru","Maringa",122540).
+linha_reta("Rifaina","Ribeirao Preto",121724).
+linha_reta("Rifaina","Cravinhos",140572).
+linha_reta("Rifaina","Batatais",91037).
+linha_reta("Rifaina","Sao Carlos",214533).
+linha_reta("Rifaina","Bauru",248390).
+linha_reta("Rifaina","Maringa",370930).
+linha_reta("Maringa","Ribeirao Preto",249206).
+linha_reta("Maringa","Cravinhos",230358).
+linha_reta("Maringa","Batatais",279893).
+linha_reta("Maringa","Sao Carlos",156397).
+linha_reta("Maringa","Bauru",122540).
+linha_reta("Maringa","Rifaina",370930).

@@ -27,3 +27,4 @@ Caso ainda não exista o comando `pip`, siga <a href="https://pip.pypa.io/en/sta
 
 #### Usando Pip 
 `sudo pip install googlemaps`
+`sudo pip install geopy`

@@ -64,12 +64,12 @@ def construct_rules(File,ApiKey,Places):
             for j,destination in enumerate(Places):
                 if(origin!=destination):
                     #Precisa estar entre aspas para não ser usada como váriavel em prolog
-                    f.write("pode_ir(\"{}\",\"{}\",{}).\n".format(origin,destination,Distance_Matrix[i][j]))
+                    f.write("pode_ir(\'{}\',\'{}\',{}).\n".format(origin,destination,Distance_Matrix[i][j]))
         for i,origin in enumerate(Places):
                     for j,destination in enumerate(Places):
                         if(origin!=destination):
                             #Precisa estar entre aspas para não ser usada como váriavel em prolog
-                            f.write("linha_reta(\"{}\",\"{}\",{}).\n".format(origin,destination,StraightLine_Matrix[i][j]))
+                            f.write("linha_reta(\'{}\',\'{}\',{}).\n".format(origin,destination,StraightLine_Matrix[i][j]))
 
 
 

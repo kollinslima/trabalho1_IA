@@ -84,20 +84,16 @@ linha_reta('Maringa','Sao Carlos',156397).
 linha_reta('Maringa','Bauru',122540).
 linha_reta('Maringa','Rifaina',370930).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%[[2,2],[5,6],[4,3]]
-
-%[X,[5,6],[4,3]]
-%[[5,6],[4,3],[2,1,4],[2,4,5],[2,3,6]]	//Expande
-%[[5,6],[4,3],[2,4,5],[2,3,6]]		//Elimina caminhos irregulares
-%[[4,3],[5,6],[2,4,5],[2,3,6]]		//Reordena caminho ativo
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-buscaCaminho(Inicio,Caminho):-
+buscaCaminho(Inicio,Caminho,Tempo):-
+   get_time(TempoInicial),
    calculaCusto(Inicio,FCusto),					%Calcula todos os custos a partir do nó inicial
    calculaAvaliacao(Inicio,FAvaliacao),				
    heuristica(FCusto,FAvaliacao,PossiveisCaminhos),		%Calcula todas as heuristicas a partir do nó inicial
    reordenaCaminhos(PossiveisCaminhos,CaminhosOrdenados),	%Coloca caminho ativo no topo da lista
    encontraNos(Nos),						%Recebe lista com todas as cidades (para saber condição de parada)
-   buscaCaminho(Inicio,Caminho,CaminhosOrdenados,Nos),!.		
+   buscaCaminho(Inicio,Caminho,CaminhosOrdenados,Nos),
+   get_time(TempoFinal),
+   Tempo is TempoFinal-TempoInicial,!.		
 
 buscaCaminho(Inicio,CaminhoAtivo,[[_|CaminhoAtivo]|_],Nos):-
 	verificaFim([Inicio|CaminhoAtivo],Nos).

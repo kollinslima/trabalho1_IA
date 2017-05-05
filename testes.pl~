@@ -29,22 +29,3 @@ pode_ir('v','u',4).
 pode_ir('v','x',1).
 pode_ir('v','w',2).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Caso de teste - Slide 6 BuscaInformada - Utilizado na Busca em profundidade
-pode_ir(a,b,7).
-pode_ir(a,c,5).
-pode_ir(a,d,9).
-pode_ir(c,a,5).
-pode_ir(c,b,8).
-pode_ir(c,d,6).
-pode_ir(b,c,8).
-pode_ir(b,d,6).
-pode_ir(b,a,7).
-pode_ir(d,a,9).
-pode_ir(d,b,6).
-pode_ir(d,c,6).
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Teste para caminhos de mesmo custo(oberservar o corte) - Utilizado na Busca em profundidade
-pode_ir(a,b,1).
-pode_ir(b,c,1).
-pode_ir(a,c,1).
-pode_ir(c,b,1).

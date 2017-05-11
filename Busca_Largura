@@ -1,13 +1,15 @@
-%Esse código não é de minha autoria.
-% resolva(No,Solucao) Solucao é um caminho acíclico
-% (na ordem reversa) entre nó inicial No e uma solução
-resolva(No,Solucao) :- breadthFirst([[No]],Solucao).
-% breadthFirst([Caminho1,Caminho2,...],Solucao), Solucao é uma
-% extensão para um nó final de um dos caminhos
-breadthFirst([[No|Caminho]|_],[No|Caminho]) :- final(No).
-breadthFirst([Caminho|OutrosCaminhos],Solucao) :- estender(Caminho,NovosCaminhos),
-concatenar(OutrosCaminhos,NovosCaminhos,Caminhos1),
-breadthFirst(Caminhos1,Solucao).
-estender([No|Caminho],NovosCaminhos) :- findall([NovoNo,No|Caminho],
-(s(No,NovoNo),pertence(NovoNo,[No|Caminho])),
+buscaLargura([[No|Caminho]|_],[No|Caminho]):-
+final(No).
+buscaLargura([Caminho|OutrosCaminhos],Sol):-
+estender(Caminho,NovosCaminhos),
+concatenar(OutrosCaminhos,NovosCaminhos,
+Caminhos1),
+buscaLargura(Caminhos1,Sol).
+% resolva(No,Solucao) Solucao é um caminho acíclico (na ordem reversa)
+% entre nó inicial No e uma solução.
+resolva(No,Solucao) :- buscaLargura([[No]],Solucao).
+concatena([],L,L). concatena([X|Y],L,[X|Lista]):- concatena(Y,L,Lista).
+estender([No|Caminho],NovosCaminhos):-
+findall([NovoNo,No|Caminho],(s(No,NovoNo),
+not(pertence(NovoNo,[No|Caminho]))),
 NovosCaminhos).

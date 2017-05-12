@@ -56,14 +56,15 @@ def places_straightline_matrix(ApiKey, Places):
 
 
 def construct_rules(File,ApiKey,Places):
-    Distance_Matrix= places_distance_matrix(ApiKey,Places)
+    distance_matrix= places_distance_matrix(ApiKey,Places)
 #    StraightLine_Matrix=places_straightline_matrix(ApiKey,Places)
     with open(File,'w') as f:
         for i,origin in enumerate(Places):
             for j,destination in enumerate(Places):
                 if(origin!=destination):
                     #Precisa estar entre aspas para não ser usada como váriavel em prolog
-                    f.write("pode_ir(\'{}\',\'{}\',{}).\n".format(origin,destination,Distance_Matrix[i][j]))
+                    f.write("pode_ir(\'{}\',\'{}\',{}).\n".format(origin,destination,distance_matrix[i][j]))
+    return distance_matrix
         # for i,origin in enumerate(Places):
         #             for j,destination in enumerate(Places):
         #                 if(origin!=destination):

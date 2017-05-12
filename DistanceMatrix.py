@@ -57,19 +57,18 @@ def places_straightline_matrix(ApiKey, Places):
 
 def construct_rules(File,ApiKey,Places):
     Distance_Matrix= places_distance_matrix(ApiKey,Places)
-    StraightLine_Matrix=places_straightline_matrix(ApiKey,Places)
-
+#    StraightLine_Matrix=places_straightline_matrix(ApiKey,Places)
     with open(File,'w') as f:
         for i,origin in enumerate(Places):
             for j,destination in enumerate(Places):
                 if(origin!=destination):
                     #Precisa estar entre aspas para não ser usada como váriavel em prolog
                     f.write("pode_ir(\'{}\',\'{}\',{}).\n".format(origin,destination,Distance_Matrix[i][j]))
-        for i,origin in enumerate(Places):
-                    for j,destination in enumerate(Places):
-                        if(origin!=destination):
-                            #Precisa estar entre aspas para não ser usada como váriavel em prolog
-                            f.write("linha_reta(\'{}\',\'{}\',{}).\n".format(origin,destination,StraightLine_Matrix[i][j]))
+        # for i,origin in enumerate(Places):
+        #             for j,destination in enumerate(Places):
+        #                 if(origin!=destination):
+        #                     #Precisa estar entre aspas para não ser usada como váriavel em prolog
+        #                     f.write("linha_reta(\'{}\',\'{}\',{}).\n".format(origin,destination,StraightLine_Matrix[i][j]))
 
 
 
@@ -79,5 +78,5 @@ def construct_rules(File,ApiKey,Places):
 #print(a)
 #print(a)
 ##Test B
-cities=['Ribeirao Preto','Cravinhos','Batatais','Sao Carlos','Bauru','Rifaina','Maringa']
-b=construct_rules("regras.pl","AIzaSyDnQndjPZDiERjXPdOmA5TAy5sVzk2rFqc",cities)
+#cities=['Ribeirao Preto','Cravinhos','Batatais','Sao Carlos','Bauru','Rifaina','Maringa']
+#b=construct_rules("regras.pl","AIzaSyDnQndjPZDiERjXPdOmA5TAy5sVzk2rFqc",cities)

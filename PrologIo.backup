@@ -1,0 +1,9 @@
+import time,os,subprocess
+#import DistanceMatrix
+#stampedname="regras"+time.strftime('%a%d%b%Y%H%M%S')
+#stampedfile=stampedname+".pl"
+#cities=['Ribeirao Preto','Cravinhos','Batatais','Sao Carlos','Bauru','Rifaina','Maringa']
+#b=DistanceMatrix.construct_rules(stampedfile,"AIzaSyDnQndjPZDiERjXPdOmA5TAy5sVzk2rFqc",cities)
+argstring='consult(regras),consult(buscacega_profundidade),open(\'rodolfo.txt\',write,Stream),buscacega_profundidade(X,Y,Z),write(Stream,X),nl(Stream),write(Stream,Y),nl(Stream),write(Stream,Z),close(Stream),halt.'
+subprocess.call(['swipl','--quiet','-t',argstring])
+#f= open(a,'w')

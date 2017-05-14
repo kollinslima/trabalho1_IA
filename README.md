@@ -23,13 +23,15 @@
 
 Caso ainda não exista o comando `pip`, siga <a href="https://pip.pypa.io/en/stable/installing/"> estas instruções</a>
 
-### Google Maps Python API
+### Modulos Python
 
 #### Usando Pip 
 `sudo pip install googlemaps`
 
 `sudo pip install geopy`
+
 `sudo pip install flask`
+
 `sudo pip install unidecode`
 ## Uso
 

@@ -32,9 +32,15 @@ Caso ainda não exista o comando `pip`, siga <a href="https://pip.pypa.io/en/sta
 `sudo pip install flask`
 `sudo pip install unidecode`
 ## Uso
+
 Na pasta principal, defina quem é a aplicação flask:
+
 `export FLASK_APP=tspserver.py`
+
 Rode a aplicação:
+
 `run flask`
+
 Acesse-a via browser 
+
 http://127.0.0.1:5000/

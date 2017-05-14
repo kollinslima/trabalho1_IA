@@ -39,7 +39,7 @@ Na pasta principal, defina quem é a aplicação flask:
 
 Rode a aplicação:
 
-`run flask`
+`flask run`
 
 Acesse-a via browser 
 

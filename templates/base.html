@@ -1,0 +1,83 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    {%block head %}
+    <meta charset="utf-8">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}">
+    <style>
+      body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {%block title %}  <title>TSP Maps</title> {% endblock %}
+    {% endblock %}  
+  </head>
+  <body>
+    <header>
+    {% block header %}
+    <nav>
+      <div class="nav-wrapper blue-grey">
+        <a href={{ url_for('index') }} class="brand-logo"><i class="material-icons">near_me</i>TSP Maps</a>
+        <ul class="right hide-on-med-and-down">
+        <li><a href=#><i class="material-icons left">question_answer</i>Sobre</a></li>
+        <li><a href="https://github.com/kollinslima/trabalho1_IA"><i class="material-icons left">library_books</i>Documentação</a></li>
+        <li><a href="https://github.com/kollinslima/trabalho1_IA"><i class="material-icons left">code</i>Github</a></li>
+        </ul>
+      </div>
+    </nav>
+    {% endblock %}
+  </header>
+  <main>
+    {% block content %}
+<div class="container">
+  <br /> 
+  <br />
+</div>
+{% endblock %}
+</main>
+    <footer class="page-footer grey lighten-2">
+
+      {% block footer %}
+      <div class="container">
+        <div class="row">
+          <div class="col s2 offset-s1">
+            Pedro Morello Abbud
+          </div>
+          <div class="col s2">
+Kollins Gabriel Lima 
+          </div>
+          <div class="col s2">
+Pedro Henrique Fini 
+          </div>
+          <div class="col s2">
+Carla Nunes da Cruz
+          </div>
+          <div class="col s2">
+            Gustavo José Pereira Leite
+          </div>
+
+        </div>
+      </div> 
+    </div>
+
+    {% endblock %}
+  </footer>
+
+    {% block script %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/materialize.js')}}"></script>
+    {% endblock %} 
+
+
+</body>
+</html>

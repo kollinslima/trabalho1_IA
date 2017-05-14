@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<style>
+  .controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="divider"></div>
+      <div class="section">
+        <h3 class="center"> Ordem do trajeto </h3>
+        <div class="center">
+          <div class="chip"> {{ busca.cities[0] }} </div></a>
+        {% for item in busca.baestrela.caminho%}
+        <i class="material-icons">trending_flat</i> <div class="chip"> {{ item }} </div></a>
+      {% endfor %}
+
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h3 class="center">Trajeto a percorrer </h3>
+    <h5 class="center"> {{ busca.distancia }} metros </h5>
+  </div>
+  <div class="divider"></div>
+
+  <h3 class="center">Tempo de execução</h3>
+  <div class="container">
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Tempo (s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A*</td>
+        <td>{{ busca.baestrela.tempo }}</td>
+      </tr>
+      <tr>
+        <td>Cega Profundidade</td>
+        <td>{{ busca.bcega.tempo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}
+
+{% block script%}
+{{ super() }}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqDByXAJTlMMALlAg4MipodSVnRhpegFA&libraries=places"> </script>
+<script>
+
+  window.onload=function intialize(){
+    var placesresult=Array();
+    var input =/** @type {!HTMLInputElement} */(document.getElementById('input-lugar'));
+    var types = document.getElementById('type-selector');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    setupClickListener('changetype-all', []);
+    setupClickListener('changetype-address', ['address']);
+    setupClickListener('changetype-establishment', ['establishment']);
+    setupClickListener('changetype-geocode', ['geocode']);
+    function setupClickListener(id, types) {
+      var radioButton = document.getElementById(id);
+      radioButton.addEventListener('click', function() {
+        autocomplete.setTypes(types);
+      });}
+    input.addEventListener('keypress', function (e) {
+      var key = e.which || e.keyCode;
+      if (key === 13) { // 13 is enter
+        placesresult.push(input.value);
+        var t= document.createElement("div");
+        t.classList.add('chip');
+        t.innerHTML=input.value;
+        document.getElementById('citiechips').appendChild(t);
+        document.getElementById("citiesresult").value=JSON.stringify(placesresult);
+      }
+    });
+
+  }
+
+</script>
+
+{% endblock %}
+

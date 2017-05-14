@@ -19,7 +19,7 @@ def extract_distance_matrix(results):
     for row in results["rows"]:
         b=[]
         for value in row['elements']:
-            b.append(( value['distance']['value'] ))
+            b.append(value['distance']['value'])
         a.append(b)
     return a
 

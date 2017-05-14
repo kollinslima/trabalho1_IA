@@ -45,11 +45,13 @@ class ResultadoBuscas:
         caminhotemp=re.split(',',b[1].strip('[]\n'))
         self.baestrela=Busca(caminhotemp,b[2])
         #Salvando a distancia total da nossa solucao
-        distancia=self.soma_caminho()
+        self.distancia=self.soma_caminho()
         #Limpando arquivos auxiliares
         os.remove(stampedfilea)
         os.remove(stampedfilecega)
         os.remove(stampedname+".pl")
+        print(self.baestrela.caminho)
+        print(self.distancia)
 
     def soma_caminho(self):
         #Mapeamento das cidades 
@@ -68,5 +70,5 @@ class ResultadoBuscas:
         return soma
 
 
-#a= ResultadoBuscas(['Maringa','Sao Paulo','Bebedouro','Matao'],0)
-#print(a.cities,a.inicial,a.bcega.caminho,a.baestrela.tempo,a.soma_caminho())
+# a= ResultadoBuscas(['Maracana','Sao Paulo','Bebedouro','Matao'],0)
+# print(a.cities,a.inicial,a.bcega.caminho,a.baestrela.tempo,a.soma_caminho())

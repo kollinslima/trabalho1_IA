@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} coding=utf\PYGZhy{}8}
+\PYG{k+kn}{import} \PYG{n+nn}{googlemaps}
+
+\PYG{k}{def} \PYG{n+nf}{extract\PYGZus{}distance\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{results}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Filtra o resultado da api e devolve uma matriz\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+    \PYG{n}{a}\PYG{o}{=}\PYG{p}{[]}
+    \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n}{results}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}rows\PYGZdq{}}\PYG{p}{]:}
+        \PYG{n}{b}\PYG{o}{=}\PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{value} \PYG{o+ow}{in} \PYG{n}{row}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}elements\PYGZsq{}}\PYG{p}{]:}
+            \PYG{n}{b}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{value}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}distance\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}value\PYGZsq{}}\PYG{p}{])}
+        \PYG{n}{a}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{b}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{a}
+
+\PYG{k}{def} \PYG{n+nf}{places\PYGZus{}distance\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{apikey}\PYG{p}{,} \PYG{n}{Places}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Constroi Matriz de conectivdade de todos os elementos usando a Api do maps\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{gmaps}\PYG{o}{=} \PYG{n}{googlemaps}\PYG{o}{.}\PYG{n}{Client}\PYG{p}{(}\PYG{n}{key}\PYG{o}{=}\PYG{n}{apikey}\PYG{p}{)}
+    \PYG{n}{results}\PYG{o}{=}\PYG{n}{gmaps}\PYG{o}{.}\PYG{n}{distance\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{Places}\PYG{p}{,}\PYG{n}{Places}\PYG{p}{)}
+    \PYG{k}{return} \PYG{p}{(}\PYG{n}{extract\PYGZus{}distance\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{results}\PYG{p}{))}
+
+\PYG{k}{def} \PYG{n+nf}{construct\PYGZus{}rules}\PYG{p}{(}\PYG{n}{File}\PYG{p}{,}\PYG{n}{apikey}\PYG{p}{,}\PYG{n}{Places}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Constroi as regras de Prolog apartir da matriz de conectividade \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{distance\PYGZus{}matrix}\PYG{o}{=} \PYG{n}{places\PYGZus{}distance\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{apikey}\PYG{p}{,}\PYG{n}{Places}\PYG{p}{)}
+    \PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{n}{File}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}w\PYGZsq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{i}\PYG{p}{,}\PYG{n}{origin} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{Places}\PYG{p}{):}
+            \PYG{k}{for} \PYG{n}{j}\PYG{p}{,}\PYG{n}{destination} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{Places}\PYG{p}{):}
+                \PYG{k}{if}\PYG{p}{(}\PYG{n}{origin}\PYG{o}{!=}\PYG{n}{destination}\PYG{p}{):}
+                    \PYG{n}{tempstring}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}pode\PYGZus{}ir(}\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s+s2}{\PYGZob{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s+s2}{,}\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s+s2}{\PYGZob{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s+s2}{,\PYGZob{}\PYGZcb{}).}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}
+                    \PYG{n}{f}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(}\PYG{n}{tempstring}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{origin}\PYG{p}{,}\PYG{n}{destination}\PYG{p}{,}\PYG{n}{distance\PYGZus{}matrix}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]))}
+    \PYG{k}{return} \PYG{n}{distance\PYGZus{}matrix}
+
+\PYG{k}{def} \PYG{n+nf}{test\PYGZus{}distance\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{apikey}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Teste da funcao places\PYGZus{}distance\PYGZus{}matrix\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{cities}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Ribeirao Preto\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Cravinhos\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Batatais\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Sao Carlos\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Bauru\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Rifaina\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Maringa\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{a}\PYG{o}{=} \PYG{n}{places\PYGZus{}distance\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{apikey}\PYG{p}{,}\PYG{n}{cities}\PYG{p}{)}
+    \PYG{k}{print}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)}
+
+\PYG{k}{def} \PYG{n+nf}{test\PYGZus{}construct\PYGZus{}rules}\PYG{p}{(}\PYG{n}{apikey}\PYG{p}{):}
+    \PYG{n}{cities}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Ribeirao Preto\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Cravinhos\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Batatais\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Sao Carlos\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Bauru\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Rifaina\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Maringa\PYGZsq{}}\PYG{p}{]}
+    \PYG{n}{b}\PYG{o}{=}\PYG{n}{construct\PYGZus{}rules}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}regras.pl\PYGZdq{}}\PYG{p}{,}\PYG{n}{apikey}\PYG{p}{,}\PYG{n}{cities}\PYG{p}{)}
+\end{Verbatim}

@@ -8,23 +8,15 @@ app= Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
 def index():
+    apikey="AIzaSyDnQndjPZDiERjXPdOmA5TAy5sVzk2rFqc"
     error=None
     if request.method =='POST':
+        #Filtrando entrada recebida do usuário
         a=request.form['resultado'].strip('\[\"')
         a=a.strip('\]\"')
         b=re.split('\"\,\"',a)
         c=[re.sub('\,','',a) for a in b]
         cidades=[unidecode(d) for d in c]
-        # for i,a in enumerate(formatando):
-        #     if(i%2!=0):
-        #         cidades.append(a)
-        #         print(a)
-        busca=ResultadoBuscas(cidades,0)
+        busca=ResultadoBuscas(cidades,0,apikey)
         return render_template('results.html',busca=busca)
-
     return render_template('application.html')
-
-# #       basic_interface() 
-
-    # a= ResultadoBuscas(['Maringa','Sao Paulo','Bebedouro','Matao'],0)
-    # return 'Distancia %d' % a.distancia

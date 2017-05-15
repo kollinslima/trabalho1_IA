@@ -2,16 +2,18 @@ import time,os,subprocess
 import DistanceMatrix
 import re
 import os
+
 class Busca:
-#Classe representando um metodo de busca
+    """Representa um metodo de busca"""
     def __init__(self,caminho,tempo):
         self.caminho=caminho
         self.tempo=tempo
 
 
 class ResultadoBuscas:
+    """Representa o resultado de todos os metodos de busca implementados """
 
-    def __init__(self,cities,inicial):
+    def __init__(self,cities,inicial,apikey):
         #Lista com Cidades
         self.cities=cities
         #Cidade de partida
@@ -22,7 +24,7 @@ class ResultadoBuscas:
         stampedfilecega="buscacega"+stamp+".out"
         stampedfilea="buscaa"+stamp+".out"
         #Matriz de Conectividade e construindo as regras
-        self.distancematrix=DistanceMatrix.construct_rules(stampedname+".pl","AIzaSyDnQndjPZDiERjXPdOmA5TAy5sVzk2rFqc",cities)
+        self.distancematrix=DistanceMatrix.construct_rules(stampedname+".pl",apikey,cities)
         #Definindo caminhos usando prolog:
         argstring='consult({}),consult({}),open(\'{}\',write,Stream),{}(\'{}\',Y,Z),write(Stream,X),nl(Stream),write(Stream,Y),nl(Stream),write(Stream,Z),close(Stream),halt.'
         subprocess.call(['swipl','--quiet','-t',argstring.format(stampedname,'buscacega_profundidade',stampedfilecega,'buscacega_profundidade',cities[inicial])])
@@ -50,8 +52,6 @@ class ResultadoBuscas:
         os.remove(stampedfilea)
         os.remove(stampedfilecega)
         os.remove(stampedname+".pl")
-        print(self.baestrela.caminho)
-        print(self.distancia)
 
     def soma_caminho(self):
         #Mapeamento das cidades 
@@ -69,6 +69,7 @@ class ResultadoBuscas:
                 soma=soma+self.distancematrix[cidadeorigem][cidadedestino]
         return soma
 
-
-# a= ResultadoBuscas(['Maracana','Sao Paulo','Bebedouro','Matao'],0)
-# print(a.cities,a.inicial,a.bcega.caminho,a.baestrela.tempo,a.soma_caminho())
+    def test():
+         a= ResultadoBuscas(['Maracana','Sao Paulo','Bebedouro','Matao'],0)
+         print(a.cities,a.inicial,a.bcega.caminho,a.baestrela.tempo,a.soma_caminho())
+         return

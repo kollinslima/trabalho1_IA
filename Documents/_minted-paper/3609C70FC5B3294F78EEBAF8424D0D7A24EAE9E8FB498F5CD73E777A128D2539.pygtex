@@ -1,0 +1,146 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{buscaCaminho}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{Caminho}\PYG{p}{,}\PYG{n+nv}{Tempo}\PYG{p}{):\PYGZhy{}}
+   \PYG{n+nf}{get\PYGZus{}time}\PYG{p}{(}\PYG{n+nv}{TempoInicial}\PYG{p}{),}
+   \PYG{n+nf}{calculaCusto}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{FCusto}\PYG{p}{),}					\PYG{c+c1}{\PYGZpc{}Calcula todos os custos a partir do nó inicial}
+   \PYG{n+nf}{calculaAvaliacao}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{FAvaliacao}\PYG{p}{),}				
+   \PYG{n+nf}{heuristica}\PYG{p}{(}\PYG{n+nv}{FCusto}\PYG{p}{,}\PYG{n+nv}{FAvaliacao}\PYG{p}{,}\PYG{n+nv}{PossiveisCaminhos}\PYG{p}{),}		\PYG{c+c1}{\PYGZpc{}Calcula todas as heuristicas a partir do nó inicial}
+   \PYG{n+nf}{reordenaCaminhos}\PYG{p}{(}\PYG{n+nv}{PossiveisCaminhos}\PYG{p}{,}\PYG{n+nv}{CaminhosOrdenados}\PYG{p}{),}	\PYG{c+c1}{\PYGZpc{}Coloca caminho ativo no topo da lista}
+   \PYG{n+nf}{encontraNos}\PYG{p}{(}\PYG{n+nv}{Nos}\PYG{p}{),}						\PYG{c+c1}{\PYGZpc{}Recebe lista com todas as cidades (para saber condição de parada)}
+   \PYG{n+nf}{buscaCaminho}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{Caminho}\PYG{p}{,}\PYG{n+nv}{CaminhosOrdenados}\PYG{p}{,}\PYG{n+nv}{Nos}\PYG{p}{),}
+   \PYG{n+nf}{get\PYGZus{}time}\PYG{p}{(}\PYG{n+nv}{TempoFinal}\PYG{p}{),}
+   \PYG{n+nv}{Tempo} \PYG{o}{is} \PYG{n+nv}{TempoFinal}\PYG{o}{\PYGZhy{}}\PYG{n+nv}{TempoInicial}\PYG{p}{,!.}		
+
+\PYG{n+nf}{buscaCaminho}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{,[[}\PYG{k}{\PYGZus{}}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{]|}\PYG{k}{\PYGZus{}}\PYG{p}{],}\PYG{n+nv}{Nos}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{verificaFim}\PYG{p}{([}\PYG{n+nv}{Inicio}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{],}\PYG{n+nv}{Nos}\PYG{p}{).}
+   
+\PYG{n+nf}{buscaCaminho}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{Caminho}\PYG{p}{,[[}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{]|}\PYG{n+nv}{Outros}\PYG{p}{],}\PYG{n+nv}{Nos}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{removeElemento}\PYG{p}{([[}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{]|}\PYG{n+nv}{Outros}\PYG{p}{],[}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{],}\PYG{n+nv}{CaminhosRestantes}\PYG{p}{),}
+	\PYG{n+nf}{expandeCaminhoAtivo}\PYG{p}{(}\PYG{n+nv}{CaminhosRestantes}\PYG{p}{,[}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{],}\PYG{n+nv}{CaminhosExtendidos}\PYG{p}{),} 		
+	\PYG{n+nf}{eliminaCaminhosIrregulares}\PYG{p}{(}\PYG{n+nv}{CaminhosExtendidos}\PYG{p}{,}\PYG{n+nv}{CaminhosCorrigidos}\PYG{p}{,}\PYG{n+nv}{Inicio}\PYG{p}{),} 			
+	\PYG{n+nf}{reordenaCaminhos}\PYG{p}{(}\PYG{n+nv}{CaminhosCorrigidos}\PYG{p}{,}\PYG{n+nv}{CaminhosOrdenados}\PYG{p}{),}
+	\PYG{n+nf}{buscaCaminho}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{Caminho}\PYG{p}{,}\PYG{n+nv}{CaminhosOrdenados}\PYG{p}{,}\PYG{n+nv}{Nos}\PYG{p}{).}
+
+\PYG{c+c1}{\PYGZpc{}Calcula função de custo de todos os caminhos conectados à Cidade}
+\PYG{n+nf}{calculaCusto}\PYG{p}{(}\PYG{n+nv}{Cidade}\PYG{p}{,}\PYG{n+nv}{FCusto}\PYG{p}{):\PYGZhy{}}
+   \PYG{n+nf}{findall}\PYG{p}{([}\PYG{n+nv}{Y}\PYG{p}{,}\PYG{n+nv}{X}\PYG{p}{],}\PYG{n+nf}{pode\PYGZus{}ir}\PYG{p}{(}\PYG{n+nv}{Cidade}\PYG{p}{,}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{Y}\PYG{p}{),}\PYG{n+nv}{FCusto}\PYG{p}{).}
+
+\PYG{c+c1}{\PYGZpc{}Calcula função de avaliaçao de todos os caminhos conectados à Cidade}
+\PYG{n+nf}{calculaAvaliacao}\PYG{p}{(}\PYG{n+nv}{Cidade}\PYG{p}{,}\PYG{n+nv}{FAvaliacao}\PYG{p}{):\PYGZhy{}}
+   \PYG{n+nf}{findall}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n+nv}{X}\PYG{p}{],}\PYG{n+nf}{pode\PYGZus{}ir}\PYG{p}{(}\PYG{n+nv}{Cidade}\PYG{p}{,}\PYG{n+nv}{X}\PYG{p}{,}\PYG{k}{\PYGZus{}}\PYG{p}{),}\PYG{n+nv}{FAvaliacao}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}Calcula função heuristica combinando FCusto e FAvaliacao em PossiveisCaminhos}
+\PYG{n+nf}{heuristica}\PYG{p}{([[}\PYG{n+nv}{Custo}\PYG{p}{,}\PYG{n+nv}{Cidade}\PYG{p}{]|}\PYG{n+nv}{CaudaC}\PYG{p}{],[[}\PYG{n+nv}{Avaliacao}\PYG{p}{,}\PYG{n+nv}{Cidade}\PYG{p}{]|}\PYG{n+nv}{CaudaA}\PYG{p}{],[[}\PYG{n+nv}{Heuristica}\PYG{p}{,}\PYG{n+nv}{Cidade}\PYG{p}{]|}\PYG{n+nv}{CaudaH}\PYG{p}{]):\PYGZhy{}}
+	\PYG{n+nv}{Heuristica} \PYG{o}{is} \PYG{n+nv}{Custo}\PYG{o}{+}\PYG{n+nv}{Avaliacao}\PYG{p}{,}
+	\PYG{n+nf}{heuristica}\PYG{p}{(}\PYG{n+nv}{CaudaC}\PYG{p}{,}\PYG{n+nv}{CaudaA}\PYG{p}{,}\PYG{n+nv}{CaudaH}\PYG{p}{).}
+	
+\PYG{n+nf}{heuristica}\PYG{p}{([[}\PYG{n+nv}{Custo}\PYG{p}{,}\PYG{n+nv}{Cidade}\PYG{p}{]],[[}\PYG{n+nv}{Avaliacao}\PYG{p}{,}\PYG{n+nv}{Cidade}\PYG{p}{]],[[}\PYG{n+nv}{Heuristica}\PYG{p}{,}\PYG{n+nv}{Cidade}\PYG{p}{]]):\PYGZhy{}}
+	\PYG{n+nv}{Heuristica} \PYG{o}{is} \PYG{n+nv}{Custo}\PYG{o}{+}\PYG{n+nv}{Avaliacao}\PYG{p}{.}
+
+
+\PYG{c+c1}{\PYGZpc{}Coloca caminho ativo no começo da lista}
+\PYG{n+nf}{reordenaCaminhos}\PYG{p}{(}\PYG{n+nv}{PossiveisCaminhos}\PYG{p}{,[}\PYG{n+nv}{Melhor}\PYG{p}{|}\PYG{n+nv}{Outros}\PYG{p}{]):\PYGZhy{}}
+	\PYG{n+nf}{menorHeuristica}\PYG{p}{(}\PYG{n+nv}{PossiveisCaminhos}\PYG{p}{,}\PYG{n+nv}{Melhor}\PYG{p}{),}
+	\PYG{n+nf}{removeElemento}\PYG{p}{(}\PYG{n+nv}{PossiveisCaminhos}\PYG{p}{,}\PYG{n+nv}{Melhor}\PYG{p}{,}\PYG{n+nv}{Outros}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}Retorna caminho ativo}
+\PYG{n+nf}{menorHeuristica}\PYG{p}{([}\PYG{n+nv}{Melhor}\PYG{p}{],}\PYG{n+nv}{Melhor}\PYG{p}{).}
+\PYG{n+nf}{menorHeuristica}\PYG{p}{([[}\PYG{n+nv}{Custo1}\PYG{p}{|}\PYG{n+nv}{Melhor1}\PYG{p}{],[}\PYG{n+nv}{Custo2}\PYG{p}{|}\PYG{k}{\PYGZus{}}\PYG{p}{]],[}\PYG{n+nv}{Custo1}\PYG{p}{|}\PYG{n+nv}{Melhor1}\PYG{p}{]):\PYGZhy{}}
+	\PYG{n+nv}{Custo1}\PYG{o}{=\PYGZlt{}}\PYG{n+nv}{Custo2}\PYG{p}{,!.}
+\PYG{n+nf}{menorHeuristica}\PYG{p}{([[}\PYG{n+nv}{Custo1}\PYG{p}{|}\PYG{k}{\PYGZus{}}\PYG{p}{],[}\PYG{n+nv}{Custo2}\PYG{p}{|}\PYG{n+nv}{Melhor2}\PYG{p}{]],[}\PYG{n+nv}{Custo2}\PYG{p}{|}\PYG{n+nv}{Melhor2}\PYG{p}{]):\PYGZhy{}}
+	\PYG{n+nv}{Custo2}\PYG{o}{\PYGZlt{}}\PYG{n+nv}{Custo1}\PYG{p}{,!.}
+\PYG{n+nf}{menorHeuristica}\PYG{p}{([}\PYG{n+nv}{Caminho1}\PYG{p}{|}\PYG{n+nv}{OutrosCaminhos}\PYG{p}{],}\PYG{n+nv}{Melhor}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{menorHeuristica}\PYG{p}{(}\PYG{n+nv}{OutrosCaminhos}\PYG{p}{,}\PYG{n+nv}{MelhorAux1}\PYG{p}{),}
+	\PYG{n+nf}{menorHeuristica}\PYG{p}{([}\PYG{n+nv}{Caminho1}\PYG{p}{,}\PYG{n+nv}{MelhorAux1}\PYG{p}{],}\PYG{n+nv}{Melhor}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}Remove elemento Melhor de PossiveisCaminhos e gera Outros}
+\PYG{n+nf}{removeElemento}\PYG{p}{([}\PYG{n+nv}{Melhor}\PYG{p}{|}\PYG{n+nv}{Outros}\PYG{p}{],}\PYG{n+nv}{Melhor}\PYG{p}{,}\PYG{n+nv}{Outros}\PYG{p}{).}
+\PYG{n+nf}{removeElemento}\PYG{p}{([}\PYG{n+nv}{Cabeca}\PYG{p}{|}\PYG{n+nv}{Cauda}\PYG{p}{],}\PYG{n+nv}{Melhor}\PYG{p}{,[}\PYG{n+nv}{Cabeca}\PYG{p}{|}\PYG{n+nv}{Outros}\PYG{p}{]):\PYGZhy{}}
+	\PYG{n+nf}{removeElemento}\PYG{p}{(}\PYG{n+nv}{Cauda}\PYG{p}{,}\PYG{n+nv}{Melhor}\PYG{p}{,}\PYG{n+nv}{Outros}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}Retorna todos as cidades do mapa}
+\PYG{n+nf}{encontraNos}\PYG{p}{(}\PYG{n+nv}{Nos}\PYG{p}{):\PYGZhy{}} 
+	\PYG{n+nf}{setof}\PYG{p}{(}\PYG{n+nv}{TodasCidades}\PYG{p}{,}\PYG{n+nv}{X}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{n+nv}{Y}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{n+nf}{pode\PYGZus{}ir}\PYG{p}{(}\PYG{n+nv}{TodasCidades}\PYG{p}{,}\PYG{n+nv}{X}\PYG{p}{,}\PYG{n+nv}{Y}\PYG{p}{),}\PYG{n+nv}{Nos}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}Verifica se CaminhoAtivo é a solução.}
+\PYG{n+nf}{verificaFim}\PYG{p}{([],[]).}
+\PYG{n+nf}{verificaFim}\PYG{p}{([}\PYG{n+nv}{Cabeca}\PYG{p}{|}\PYG{n+nv}{Cauda}\PYG{p}{],}\PYG{n+nv}{Nos}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{contemElemento}\PYG{p}{(}\PYG{n+nv}{Cabeca}\PYG{p}{,}\PYG{n+nv}{Nos}\PYG{p}{),}
+	\PYG{n+nf}{removeElemento}\PYG{p}{(}\PYG{n+nv}{Nos}\PYG{p}{,}\PYG{n+nv}{Cabeca}\PYG{p}{,}\PYG{n+nv}{NovosNos}\PYG{p}{),}
+	\PYG{n+nf}{verificaFim}\PYG{p}{(}\PYG{n+nv}{Cauda}\PYG{p}{,}\PYG{n+nv}{NovosNos}\PYG{p}{).}
+
+
+\PYG{n+nf}{contemElemento}\PYG{p}{(}\PYG{n+nv}{Elemento}\PYG{p}{,[}\PYG{n+nv}{Elemento}\PYG{p}{|}\PYG{k}{\PYGZus{}}\PYG{p}{]).}
+\PYG{n+nf}{contemElemento}\PYG{p}{(}\PYG{n+nv}{Elemento}\PYG{p}{,[}\PYG{k}{\PYGZus{}}\PYG{p}{|}\PYG{n+nv}{Cauda}\PYG{p}{]):\PYGZhy{}}
+	\PYG{n+nf}{contemElemento}\PYG{p}{(}\PYG{n+nv}{Elemento}\PYG{p}{,}\PYG{n+nv}{Cauda}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}Concatena os novos caminhos possíveis a partir do caminho ativo}
+\PYG{n+nf}{expandeCaminhoAtivo}\PYG{p}{(}\PYG{n+nv}{CaminhosRestantes}\PYG{p}{,[}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{],}\PYG{n+nv}{CaminhosExtendidos}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{ultimoNo}\PYG{p}{(}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{,}\PYG{n+nv}{Ultimo}\PYG{p}{),}
+	\PYG{n+nf}{calculaCusto}\PYG{p}{(}\PYG{n+nv}{Ultimo}\PYG{p}{,}\PYG{n+nv}{FCustoExtendido}\PYG{p}{),}					
+	\PYG{n+nf}{calculaAvaliacao}\PYG{p}{(}\PYG{n+nv}{Ultimo}\PYG{p}{,}\PYG{n+nv}{FAvaliacaoExtendida}\PYG{p}{),}				
+	\PYG{n+nf}{heuristica}\PYG{p}{(}\PYG{n+nv}{FCustoExtendido}\PYG{p}{,}\PYG{n+nv}{FAvaliacaoExtendida}\PYG{p}{,}\PYG{n+nv}{PossiveisCaminhosExtendidos}\PYG{p}{),}	
+	\PYG{n+nf}{reconstroiCaminhos}\PYG{p}{([}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{],}\PYG{n+nv}{PossiveisCaminhosExtendidos}\PYG{p}{,}\PYG{n+nv}{CaminhosReconstruidos}\PYG{p}{),}
+	\PYG{n+nf}{concatenaLista}\PYG{p}{(}\PYG{n+nv}{CaminhosRestantes}\PYG{p}{,}\PYG{n+nv}{CaminhosReconstruidos}\PYG{p}{,}\PYG{n+nv}{CaminhosExtendidos}\PYG{p}{).}
+
+
+\PYG{n+nf}{ultimoNo}\PYG{p}{([}\PYG{n+nv}{E}\PYG{p}{],}\PYG{n+nv}{E}\PYG{p}{).}
+\PYG{n+nf}{ultimoNo}\PYG{p}{([}\PYG{k}{\PYGZus{}}\PYG{p}{|}\PYG{n+nv}{Cauda}\PYG{p}{],}\PYG{n+nv}{E}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{ultimoNo}\PYG{p}{(}\PYG{n+nv}{Cauda}\PYG{p}{,}\PYG{n+nv}{E}\PYG{p}{).}
+
+
+\PYG{n+nf}{reconstroiCaminhos}\PYG{p}{([}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{],[[}\PYG{n+nv}{CustoExtendido}\PYG{p}{|}\PYG{n+nv}{CaminhoExtendido}\PYG{p}{]],[[}\PYG{n+nv}{Custo}\PYG{p}{|}\PYG{n+nv}{Caminhos}\PYG{p}{]]):\PYGZhy{}}
+	\PYG{n+nv}{Custo} \PYG{o}{is} \PYG{n+nv}{CustoAtivo}\PYG{o}{+}\PYG{n+nv}{CustoExtendido}\PYG{p}{,}
+	\PYG{n+nf}{concatenaLista}\PYG{p}{(}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{,}\PYG{n+nv}{CaminhoExtendido}\PYG{p}{,}\PYG{n+nv}{Caminhos}\PYG{p}{).}
+
+\PYG{n+nf}{reconstroiCaminhos}\PYG{p}{([}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{],[[}\PYG{n+nv}{CustoExtendido}\PYG{p}{|}\PYG{n+nv}{CaminhoExtendido}\PYG{p}{]|}\PYG{n+nv}{OutrosCaminhosExtendidos}\PYG{p}{],[[}\PYG{n+nv}{Custo}\PYG{p}{|}\PYG{n+nv}{Caminhos}\PYG{p}{]|}\PYG{n+nv}{OutrosCaminhos}\PYG{p}{]):\PYGZhy{}}
+	\PYG{n+nv}{Custo} \PYG{o}{is} \PYG{n+nv}{CustoAtivo}\PYG{o}{+}\PYG{n+nv}{CustoExtendido}\PYG{p}{,}
+	\PYG{n+nf}{concatenaLista}\PYG{p}{(}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{,}\PYG{n+nv}{CaminhoExtendido}\PYG{p}{,}\PYG{n+nv}{Caminhos}\PYG{p}{),}
+	\PYG{n+nf}{reconstroiCaminhos}\PYG{p}{([}\PYG{n+nv}{CustoAtivo}\PYG{p}{|}\PYG{n+nv}{CaminhoAtivo}\PYG{p}{],}\PYG{n+nv}{OutrosCaminhosExtendidos}\PYG{p}{,}\PYG{n+nv}{OutrosCaminhos}\PYG{p}{).}	
+
+
+\PYG{n+nf}{concatenaLista}\PYG{p}{([],}\PYG{n+nv}{L}\PYG{p}{,}\PYG{n+nv}{L}\PYG{p}{).}
+\PYG{n+nf}{concatenaLista}\PYG{p}{([}\PYG{n+nv}{Cabeca1}\PYG{p}{|}\PYG{n+nv}{Cauda1}\PYG{p}{],}\PYG{n+nv}{L2}\PYG{p}{,[}\PYG{n+nv}{Cabeca1}\PYG{p}{|}\PYG{n+nv}{Cauda3}\PYG{p}{]):\PYGZhy{}}
+	\PYG{n+nf}{concatenaLista}\PYG{p}{(}\PYG{n+nv}{Cauda1}\PYG{p}{,}\PYG{n+nv}{L2}\PYG{p}{,}\PYG{n+nv}{Cauda3}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}Elimina todos os caminhos expandidos que não podem ser caminhos finais, criando a lista CaminhosCorrigidos}
+\PYG{n+nf}{eliminaCaminhosIrregulares}\PYG{p}{([],[],}\PYG{k}{\PYGZus{}}\PYG{p}{):\PYGZhy{}!.}
+
+\PYG{n+nf}{eliminaCaminhosIrregulares}\PYG{p}{(}\PYG{n+nv}{Caminhos}\PYG{p}{,[],}\PYG{n+nv}{Inicio}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{caminhoValido}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{Caminhos}\PYG{p}{,}\PYG{n+nv}{NovosCaminhos}\PYG{p}{),}
+	\PYG{n+nf}{tamanhoLista}\PYG{p}{(}\PYG{n+nv}{NovosCaminhos}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{).}
+
+\PYG{n+nf}{eliminaCaminhosIrregulares}\PYG{p}{(}\PYG{n+nv}{Caminhos}\PYG{p}{,[}\PYG{n+nv}{CaminhoCorrigido}\PYG{p}{|}\PYG{n+nv}{OutrosCorrigidos}\PYG{p}{],}\PYG{n+nv}{Inicio}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{caminhoValido}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{Caminhos}\PYG{p}{,}\PYG{n+nv}{CaminhoCorrigido}\PYG{p}{),}
+	\PYG{n+nf}{removeElemento}\PYG{p}{(}\PYG{n+nv}{Caminhos}\PYG{p}{,}\PYG{n+nv}{CaminhoCorrigido}\PYG{p}{,}\PYG{n+nv}{NovosCaminhos}\PYG{p}{),}
+	\PYG{n+nf}{eliminaCaminhosIrregulares}\PYG{p}{(}\PYG{n+nv}{NovosCaminhos}\PYG{p}{,}\PYG{n+nv}{OutrosCorrigidos}\PYG{p}{,}\PYG{n+nv}{Inicio}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}Retorna um caminho válido de Caminhos ou lista vazia.}
+\PYG{n+nf}{caminhoValido}\PYG{p}{(}\PYG{k}{\PYGZus{}}\PYG{p}{,[],[]).}
+
+\PYG{n+nf}{caminhoValido}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,[[}\PYG{n+nv}{Custo}\PYG{p}{|}\PYG{n+nv}{Caminho}\PYG{p}{]|}\PYG{k}{\PYGZus{}}\PYG{p}{],[}\PYG{n+nv}{Custo}\PYG{p}{|}\PYG{n+nv}{Caminho}\PYG{p}{]):\PYGZhy{}}
+	\PYG{o}{not}\PYG{p}{(}\PYG{n+nf}{repeteElemento}\PYG{p}{([}\PYG{n+nv}{Inicio}\PYG{p}{|}\PYG{n+nv}{Caminho}\PYG{p}{])),!.}
+
+\PYG{n+nf}{caminhoValido}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,[}\PYG{k}{\PYGZus{}}\PYG{p}{|}\PYG{n+nv}{Cauda}\PYG{p}{],}\PYG{n+nv}{CaminhoCorrigido}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{caminhoValido}\PYG{p}{(}\PYG{n+nv}{Inicio}\PYG{p}{,}\PYG{n+nv}{Cauda}\PYG{p}{,}\PYG{n+nv}{CaminhoCorrigido}\PYG{p}{).}
+
+
+\PYG{c+c1}{\PYGZpc{}True se há repetição}
+\PYG{n+nf}{repeteElemento}\PYG{p}{([]):\PYGZhy{}}\PYG{l+s+sAtom}{fail}\PYG{p}{.}
+\PYG{n+nf}{repeteElemento}\PYG{p}{(}\PYG{n+nv}{Lista}\PYG{p}{):\PYGZhy{}}
+	\PYG{n+nf}{setof}\PYG{p}{(}\PYG{n+nv}{Elemento}\PYG{p}{,}\PYG{n+nv}{X}\PYG{l+s+sAtom}{\PYGZca{}}\PYG{n+nf}{removeElemento}\PYG{p}{(}\PYG{n+nv}{Lista}\PYG{p}{,}\PYG{n+nv}{Elemento}\PYG{p}{,}\PYG{n+nv}{X}\PYG{p}{),}\PYG{n+nv}{Laux}\PYG{p}{),}
+	\PYG{n+nf}{tamanhoLista}\PYG{p}{(}\PYG{n+nv}{Laux}\PYG{p}{,}\PYG{n+nv}{Num}\PYG{p}{),}
+	\PYG{o}{not}\PYG{p}{(}\PYG{n+nf}{tamanhoLista}\PYG{p}{(}\PYG{n+nv}{Lista}\PYG{p}{,}\PYG{n+nv}{Num}\PYG{p}{)).}
+
+
+
+\PYG{n+nf}{tamanhoLista}\PYG{p}{([],}\PYG{l+m+mi}{0}\PYG{p}{).}
+\PYG{n+nf}{tamanhoLista}\PYG{p}{([}\PYG{k}{\PYGZus{}}\PYG{p}{|}\PYG{n+nv}{Cauda}\PYG{p}{],}\PYG{n+nv}{N}\PYG{p}{):\PYGZhy{}}\PYG{n+nf}{tamanhoLista}\PYG{p}{(}\PYG{n+nv}{Cauda}\PYG{p}{,}\PYG{n+nv}{Naux}\PYG{p}{),} \PYG{n+nv}{N} \PYG{o}{is} \PYG{l+m+mi}{1}\PYG{o}{+}\PYG{n+nv}{Naux}\PYG{p}{.}
+\end{Verbatim}

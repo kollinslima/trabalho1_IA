@@ -1,0 +1,41 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{buscacega\PYGZus{}profundidade}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,}\PYG{n+nv}{Cam}\PYG{p}{,}\PYG{n+nv}{TempoExecucao}\PYG{p}{):\PYGZhy{}}
+     \PYG{n+nf}{get\PYGZus{}time}\PYG{p}{(}\PYG{n+nv}{TempoInicial}\PYG{p}{),}
+     \PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{TamCaminho}\PYG{p}{,}\PYG{n+nf}{busca\PYGZus{}Caminho}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,}\PYG{n+nv}{F}\PYG{p}{,}\PYG{k}{\PYGZus{}}\PYG{p}{,}\PYG{k}{\PYGZus{}}\PYG{p}{,}\PYG{n+nv}{TamCaminho}\PYG{p}{),}\PYG{n+nv}{ListaTam}\PYG{p}{),}\PYG{n+nf}{maxLista}\PYG{p}{(}\PYG{n+nv}{ListaTam}\PYG{p}{,}\PYG{n+nv}{TamCaminho\PYGZus{}Max}\PYG{p}{),}
+     \PYG{n+nf}{findall}\PYG{p}{(}\PYG{n+nv}{CustoCaminho}\PYG{p}{,}\PYG{n+nf}{busca\PYGZus{}Caminho}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,}\PYG{n+nv}{F}\PYG{p}{,}\PYG{k}{\PYGZus{}}\PYG{p}{,}\PYG{n+nv}{CustoCaminho}\PYG{p}{,}\PYG{n+nv}{TamCaminho\PYGZus{}Max}\PYG{p}{),}\PYG{n+nv}{ListaCusto}\PYG{p}{),}\PYG{n+nf}{minLista}\PYG{p}{(}\PYG{n+nv}{ListaCusto}\PYG{p}{,}\PYG{n+nv}{CustoCaminho\PYGZus{}Min}\PYG{p}{),}
+     \PYG{n+nf}{busca\PYGZus{}Caminho}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,}\PYG{n+nv}{F}\PYG{p}{,}\PYG{n+nv}{Cam}\PYG{p}{,}\PYG{n+nv}{CustoCaminho\PYGZus{}Min}\PYG{p}{,}\PYG{n+nv}{TamCaminho\PYGZus{}Max}\PYG{p}{),}\PYG{n+nf}{get\PYGZus{}time}\PYG{p}{(}\PYG{n+nv}{TempoFinal}\PYG{p}{),!,}\PYG{n+nv}{TempoExecucao} \PYG{o}{is} \PYG{n+nv}{TempoFinal}\PYG{o}{\PYGZhy{}}\PYG{n+nv}{TempoInicial}\PYG{p}{.}
+
+\PYG{n+nf}{busca\PYGZus{}Caminho}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,}\PYG{n+nv}{F}\PYG{p}{,}\PYG{n+nv}{Cam}\PYG{p}{,}\PYG{n+nv}{CustoTotal}\PYG{p}{,}\PYG{n+nv}{Tamanho}\PYG{p}{):\PYGZhy{}}
+     \PYG{n+nv}{CustoInicial} \PYG{o}{is} \PYG{l+m+mi}{0}\PYG{p}{,}
+     \PYG{n+nf}{caminho}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,[}\PYG{n+nv}{F}\PYG{p}{],}\PYG{n+nv}{Cam}\PYG{p}{,[}\PYG{n+nv}{CustoInicial}\PYG{p}{],}\PYG{n+nv}{CustoFinal}\PYG{p}{),}\PYG{n+nf}{somaElem\PYGZus{}Lista}\PYG{p}{(}\PYG{n+nv}{CustoFinal}\PYG{p}{,}\PYG{n+nv}{CustoTotal}\PYG{p}{),}\PYG{n+nf}{tamLista}\PYG{p}{(}\PYG{n+nv}{CustoFinal}\PYG{p}{,}\PYG{n+nv}{Tamanho}\PYG{p}{).}
+     \PYG{n+nf}{caminho}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,[}\PYG{n+nv}{I}\PYG{p}{|}\PYG{n+nv}{Caminho}\PYG{p}{],[}\PYG{n+nv}{I}\PYG{p}{|}\PYG{n+nv}{Caminho}\PYG{p}{],}\PYG{n+nv}{CustoCaminho}\PYG{p}{,}\PYG{n+nv}{CustoCaminho}\PYG{p}{).}
+     \PYG{n+nf}{caminho}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,[}\PYG{n+nv}{Ult\PYGZus{}Estado}\PYG{p}{|}\PYG{n+nv}{Caminho\PYGZus{}ate\PYGZus{}agora}\PYG{p}{],}\PYG{n+nv}{Cam}\PYG{p}{,[}\PYG{n+nv}{Ult\PYGZus{}Custo}\PYG{p}{|}\PYG{n+nv}{Custo\PYGZus{}ate\PYGZus{}agora}\PYG{p}{],}\PYG{n+nv}{CustoFinal}\PYG{p}{):\PYGZhy{}}
+      \PYG{n+nf}{pode\PYGZus{}ir}\PYG{p}{(}\PYG{n+nv}{Est}\PYG{p}{,}\PYG{n+nv}{Ult\PYGZus{}Estado}\PYG{p}{,}\PYG{n+nv}{Custo}\PYG{p}{),}
+      \PYG{o}{not}\PYG{p}{(} \PYG{n+nf}{pertence1}\PYG{p}{(}\PYG{n+nv}{Est}\PYG{p}{,}\PYG{n+nv}{Caminho\PYGZus{}ate\PYGZus{}agora}\PYG{p}{)),}
+      \PYG{n+nf}{caminho}\PYG{p}{(}\PYG{n+nv}{I}\PYG{p}{,[}\PYG{n+nv}{Est}\PYG{p}{,}\PYG{n+nv}{Ult\PYGZus{}Estado}\PYG{p}{|}\PYG{n+nv}{Caminho\PYGZus{}ate\PYGZus{}agora}\PYG{p}{],}\PYG{n+nv}{Cam}\PYG{p}{,[}\PYG{n+nv}{Custo}\PYG{p}{,}\PYG{n+nv}{Ult\PYGZus{}Custo}\PYG{p}{|}\PYG{n+nv}{Custo\PYGZus{}ate\PYGZus{}agora}\PYG{p}{],}\PYG{n+nv}{CustoFinal}\PYG{p}{).}
+
+\PYG{c+c1}{\PYGZpc{}Tamanho da lista}
+\PYG{n+nf}{tamLista}\PYG{p}{([],} \PYG{l+m+mi}{0}\PYG{p}{):\PYGZhy{}} \PYG{p}{!.}
+\PYG{n+nf}{tamLista}\PYG{p}{([}\PYG{k}{\PYGZus{}}\PYG{p}{|}\PYG{n+nv}{L}\PYG{p}{],} \PYG{n+nv}{T}\PYG{p}{):\PYGZhy{}} \PYG{n+nf}{tamLista}\PYG{p}{(}\PYG{n+nv}{L}\PYG{p}{,} \PYG{n+nv}{X}\PYG{p}{),} \PYG{n+nv}{T} \PYG{o}{is} \PYG{n+nv}{X} \PYG{o}{+} \PYG{l+m+mf}{1.}
+
+\PYG{c+c1}{\PYGZpc{}Verifica se uma elemento pertence a lista}
+\PYG{n+nf}{pertence1}\PYG{p}{(}\PYG{n+nv}{E}\PYG{p}{,[}\PYG{n+nv}{E}\PYG{p}{|}\PYG{k}{\PYGZus{}}\PYG{p}{]):\PYGZhy{}} \PYG{p}{!.}
+\PYG{n+nf}{pertence1}\PYG{p}{(}\PYG{n+nv}{E}\PYG{p}{,[}\PYG{k}{\PYGZus{}}\PYG{p}{|}\PYG{n+nv}{T}\PYG{p}{]):\PYGZhy{}}
+ \PYG{n+nf}{pertence1}\PYG{p}{(}\PYG{n+nv}{E}\PYG{p}{,}\PYG{n+nv}{T}\PYG{p}{).}
+
+\PYG{c+c1}{\PYGZpc{}Soma todos os elementos de uma lista}
+\PYG{n+nf}{somaElem\PYGZus{}Lista}\PYG{p}{([],}\PYG{l+m+mi}{0}\PYG{p}{).}
+\PYG{n+nf}{somaElem\PYGZus{}Lista}\PYG{p}{([}\PYG{n+nv}{Elem}\PYG{p}{|}\PYG{n+nv}{Cauda}\PYG{p}{],}\PYG{n+nv}{Soma}\PYG{p}{):\PYGZhy{}}
+     \PYG{n+nf}{somaElem\PYGZus{}Lista}\PYG{p}{(}\PYG{n+nv}{Cauda}\PYG{p}{,}\PYG{n+nv}{Som}\PYG{p}{),}
+     \PYG{n+nv}{Soma} \PYG{o}{is} \PYG{n+nv}{Som}\PYG{o}{+}\PYG{n+nv}{Elem}\PYG{p}{.}
+
+\PYG{c+c1}{\PYGZpc{}Menor elemento de uma lista}
+\PYG{n+nf}{minLista}\PYG{p}{([}\PYG{n+nv}{X}\PYG{p}{],}\PYG{n+nv}{X}\PYG{p}{).}
+\PYG{n+nf}{minLista}\PYG{p}{([}\PYG{n+nv}{X}\PYG{p}{|}\PYG{n+nv}{Y}\PYG{p}{],}\PYG{n+nv}{M}\PYG{p}{):\PYGZhy{}}
+     \PYG{n+nf}{minLista}\PYG{p}{(}\PYG{n+nv}{Y}\PYG{p}{,}\PYG{n+nv}{N}\PYG{p}{),(}\PYG{n+nv}{X}\PYG{o}{\PYGZlt{}}\PYG{n+nv}{N} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{n+nv}{M}\PYG{o}{=}\PYG{n+nv}{X}\PYG{p}{;}\PYG{n+nv}{M}\PYG{o}{=}\PYG{n+nv}{N}\PYG{p}{).}
+
+\PYG{c+c1}{\PYGZpc{}Maior elemento de uma lista}
+\PYG{n+nf}{maxLista}\PYG{p}{([}\PYG{n+nv}{X}\PYG{p}{],}\PYG{n+nv}{X}\PYG{p}{).}
+\PYG{n+nf}{maxLista}\PYG{p}{([}\PYG{n+nv}{X}\PYG{p}{|}\PYG{n+nv}{Y}\PYG{p}{],}\PYG{n+nv}{M}\PYG{p}{):\PYGZhy{}}
+     \PYG{n+nf}{maxLista}\PYG{p}{(}\PYG{n+nv}{Y}\PYG{p}{,}\PYG{n+nv}{N}\PYG{p}{),(}\PYG{n+nv}{X}\PYG{o}{\PYGZgt{}}\PYG{n+nv}{N} \PYG{l+s+sAtom}{\PYGZhy{}\PYGZgt{}} \PYG{n+nv}{M}\PYG{o}{=}\PYG{n+nv}{X}\PYG{p}{;}\PYG{n+nv}{M}\PYG{o}{=}\PYG{n+nv}{N}\PYG{p}{).}
+\end{Verbatim}

@@ -1,48 +1,77 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{mathrsfs}
 \usepackage{amsfonts}
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{mdframed}
+\newenvironment{code}{\captionsetup{type=listing}}{}
 \begin{document}
-\begin{titlepage}
-  \centering
-  \includegraphics[width=0.33\textwidth]{usp}\par\vspace{1cm}
-  {\scshape\LARGE Universidade de São Paulo\par}
-  \vspace{1cm}
-  {\scshape\Large SEL0611- Fundamentos de Controle\par}
-  \vspace{1.5cm}
-  {\huge\bfseries Lista de Exercícios No.1\par}
-  \vspace{2cm}
-  {\Large\itshape Pedro Morello Abbud \par}
-  \vspace{1cm}
-  Número USP 8058718
-  \vfill
-  Disciplina minsitrada por\par
-  Professor Doutor B.J.Mass
+\newcommand*{\plogo}{\fbox{$\mathcal{ICMC}$}} % Generic publisher logo
 
-  \vfill 
-  % Bottom of the page
-  {\large \today\par}
-\end{titlepage}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
+%\centering % Center all text
+\vspace*{\baselineskip} % White space at the top of the page
+
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
+\rule{\textwidth}{0.4pt}\\[\baselineskip] % Thin horizontal line
+
+{\LARGE SCC0630\\ Inteligência Artificial\\[0.5\baselineskip] Buscas Cega e Informada}\\[0.2\baselineskip] % Title
+
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
+\rule{\textwidth}{1.6pt}\\[\baselineskip] % Thick horizontal line
+
+\scshape % Small caps
+Problema do caxeiro viajante (\emph{TSP})\\ % Tagline(s) or further description
+em uma aplicação Web usando \\ % Tagline(s) or further description
+Google Maps API, Prolog e Python\par % Location and year
+
+\vspace*{2\baselineskip} % Whitespace between location/year and editors
+
+Feito por\\[\baselineskip]
+{\Large Pedro Morello Abbud\\ 
+Kollins Gabriel Lima 	\\	
+Carla Nunes da Cruz 	\\
+Gustavo José Pereira Leite \\	
+Pedro Henrique Fini 		\par} % Editor list
+
+\vfill % Whitespace between editor names and publisher logo
+{\itshape Universidade de\\ São Paulo\par} % Editor affiliation
+
+\vfill % Whitespace between editor names and publisher logo
+
+\plogo \\[0.3\baselineskip] % Publisher logo
+{\scshape 2017} \\[0.3\baselineskip] % Year published
+
+\endgroup}
+\titleGP
 \newpage
-\section{Introducao}
-Este trabalho foi desenvolvido para a disciplina SMEXXX, Inteligencia Artificial, ministrada pela Professora Solange Sobrenome Sobrenome. O objetivo deste eh aprofundar e confirmar o conhecimento de nos , alunos, a cerca de buscas cegas e buscas informadas, assim como modelagem de problemas e solucao dos mesmos. Como o projeto tem vies tambem didatico, escolhemos utilizar Prolog como seu motor principal, pois este foi a linguagem de programacao de escolha ao ministrar-se as aulas da disciplinas. Dividimos a documentacao deste projeto em 3 partes:
+\section{Introdução}
+Este trabalho foi desenvolvido para a disciplina SCC0630, Inteligência Artificial, ministrada pela Professora Solange Oliveira Rezende. O objetivo deste é aprofundar e confirmar o conhecimento de nós , alunos, acerca de buscas cegas e buscas informadas, assim como modelagem e solução de problemas. Como o projeto tem também viés didático, escolhemos utilizar a linguagem \emph{Prolog} como seu motor principal, pois esta foi a linguagem de programação de escolha nas aulas ministradas da disciplina. Dividimos a documentação e desenvolvimento deste projeto em três seções:
 \begin{description}
   \item [Modelagem do Problema]:
 
-Consiste em definir o problema, suas dificuldades e qual abordagem foi utilizada para isso.
+Consiste em como definimos o problema e analisamos suas dificuldades.
 \item [Solucao do Problema]:
 
-Como abordamos e resolvemos o problema.
+Como  foi abordado e resolvido o problema.
 \item[Apresentacao do Problema]:
 
-As escolhas decididas por este grupo para apresentar de forma clara e interessante os resultados da Modelagem e Solucao do problema.
+Escolhas para apresentar de forma clara, coerente e interessante os resultados obtidos.  
 \end{description}
-Foi escolhido para este projeto o problema do caixeiro-viajante, ou em ingles, TSP, Travelling Salesman Problem. Este é um problema clássico em computação: dado um mapa e um número de cidades, encontrar o caminho de menor distância para percorrer todas as cidades, passando uma única vez por cada uma delas. O problema do caixeiro-viajante é um problema de alta complexidade computacional e encontrar a solução ótima para um número elevado de cidades é muito custoso, crescendo de forma exponencial. 
 
-Definindo de uma forma formal, podemos dizer que o problema se resume em achar o menor caminho hamiltoniano em um grafo, o que caracteriza um problema NP-HARD.
+Foi escolhido para este projeto o problema do caixeiro-viajante, ou em inglês, \emph{TSP}, Travelling Salesman Problem.
+Este é um problema clássico em computação: dado um mapa e um número de cidades, encontrar o caminho de menor distância para percorrer todas as cidades,
+passando uma única vez por cada uma delas. O problema do caixeiro-viajante é um problema de alta complexidade computacional e encontrar a solução ótima para um número elevado de cidades é muito custoso.\\
+De uma forma formal, podemos dizer que o problema se resume em achar o menor caminho hamiltoniano em um grafo, o que caracteriza um problema NP-Difícil.
 
 Neste trabalho, é analisado o uso de dois métodos de busca não informada (busca em profundidade e em largura) e um método de busca informada (A*) para a solução do problema.
 
@@ -53,37 +82,97 @@ O problema abordado neste trabalho foi modificado em, relação ao problema orig
 É definida uma cidade inicial, informada no início do programa para fazer a busca;
 \item A busca é feita sem considerar o retorno à cidade original.
 \end{itemize}
-	
 
-\section{Modelagem}
-\begin{figure}[htpb]
-  \centering
-  \includegraphics[width=0.8\linewidth]{name.ext}
-  \caption{Name}
-  \label{fig:name}
-\end{figure}
-	A figura 1 mostra uma representação das cidades e suas interligações modeladas em um grafo. Cada nó do grafo representa uma cidade e as arestas são os caminhos, cada qual possui um custo associado.
-
-Para uma abordagem mais realista, foi utilizada a API do Google Maps em um script Python para obter as distâncias reais entre cidades reais. A partir deste script, são exportadas as regras para o prolog, onde foi feita a implementação da busca. Desta forma, po$^$de-se modelar o problema de forma dinamica.
-
-Ao longo deste documento usaremos as seguintes definicoes:
+Ao longo deste documento usaremos algumas definições:
 \begin{description}
   \item 
     [Estados:] Um estado é o caminho percorrido da cidade inicial até a cidade atual (com exceção do estado inicial, que não possui caminho mas apenas a cidade inicial).
+
   \item[Transição:] Viagem de uma cidade para a outra.
-Estado final: Caminho percorrido depois de visitar todas as cidades uma única vez (e que apresenta o menor custo).
+
+  \item [Estado final:] Caminho percorrido depois de visitar todas as cidades uma única vez (e que apresenta o menor custo).
+
 \item [Custo:] Distância entre as cidades.
+
 \end{description}
-\section{Solucao}
+	
+\newpage
+\section{Modelagem}
+% \begin{figure}[htpb]
+%   %\centering
+%   \includegraphics[width=0.8\linewidth]{name.ext}
+%   \caption{Name}
+%   \label{fig:1}
+% \end{figure}
+A figura \ref{fig:1} mostra uma representação das cidades e suas interligações modeladas em um grafo. Cada nó do grafo representa uma cidade e as arestas são os caminhos, cada qual possui um custo associado.
 
+Para uma abordagem mais realista, foi utilizada a API do Google Maps em um script Python para obter as distâncias reais entre cidades reais. A partir deste script, são exportadas as regras para o prolog, onde foi feita a implementação da busca. Desta forma, pôde-se modelar o problema de forma dinâmica e interativa.
+
+Assim, criamos uma função que se comunica com a API do Google Maps, e extraí dela uma matriz de conectividade, que indica o custo de cada transição. O código está representado na Listing~\ref{Code:1}. 
+
+A função \mintinline{python}{places_distance_matrix()} usa o wrapper Python do google maps e envia a lista de lugares a serem percorridos e retorna a string com a resposta da API. 
+
+A função \mintinline{python}{extract_distance_matrix()} é apenas um filtro para a respota da API do googlemaps, que devolve a matrix de conectividade desejada.
+
+A função  \mintinline{python}{construct_rules()} a partir da resposta já filtrada da API constrói um arquivo com fatos necessários para a execução da busca em Prolog.
+
+  %\centering
+\begin{mdframed}[linecolor=black, topline=true, bottomline=true,
+  leftline=false, rightline=false, backgroundcolor=yellow!10!white]
+\inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{python}{../DistanceMatrix.py}
+\end{mdframed}
+%\caption{\emph{DistanceMatrix.py} - Constrói regras de Prolog apartir da API do Google Maps}
+  \label{Code:1}
+\newpage
+\section{Solução}
+Modelado nosso problema e definido as regras, finalmente podemos começar a resolvê-lo. Desenvolvemos dois programas em Prolog que encontram o menor caminho para o TSP. O primeiro programa utiliza uma busca cega sem heurística, visitando todas as possibilidades de seu espaço de busca antes de encerrar sua execução. A segunda estratégia foi utilizar do algoritmo A* que sempre reavalia os possíveis melhores caminhos;
 \subsection{Busca Cega}
-Para a busca cega, foi testada tanto a busca em profundidade quanto a busca em largura para avaliar qual apresenta o melhor resultado.	
-
+Para a busca cega, foi testada tanto a busca em profundidade quanto a busca em largura para avaliar qual apresenta o melhor resultado. O código está representado na Listing~\ref{Code:2}
+  %\centering
+\begin{mdframed}[linecolor=black, topline=true, bottomline=true,
+  leftline=false, rightline=false, backgroundcolor=yellow!10!white]
+\inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{prolog}{../buscacega_profundidade.pl}
+\end{mdframed}
+%\caption{\emph{buscacega\_profundidade.pl} - Define uma busca cega por profundidade}
+  \label{Code:2}
 
 \subsection{Busca Informada}
 Para fazer a busca informada foi utilizada a estratégia A*. Essa estratégia foi utilizada por trabalhar com caminhos, e não apenas com um resultado final, o que é ideal para o problema. Também é interessante por não retornar um resultado aproximado, mas sim um resultado ótimo, desde que seja utilizada uma função de avaliação admissível. 
 	Um ponto negativo desta estratégia é a quantidade de memória utilizada já que todos os caminhos tentados são armazenados (embora apenas um caminho esteja sendo desenvolvido por vez). Em nossos testes, não foi possível encontrar a solução para mais de 7 cidades.
   A heurística utilizada para guiar a busca A* foi a de vizinho mais próximo. Nesta, a função de avaliação é sempre zero (e portanto é admissível) e a função de custo é a distância entre as cidades. (Foi implementada também a heurística de inserção mais barata, fazendo a função de avaliação ser a distância em linha reta entre as cidades, no entanto essa apresentou uma performance pior, certamente devido à maneira como foi implementada.)
-  \section{Apresentacao dos resultados}
-  Como um terminal de query Prolog parece criptico e pouco intuitivo para o usuario final, escolhemos desenvoler uma aplicacao web que se comunica com nossa solucao em Prolog 
+  O código foi representado pelo Listing~\ref{Code:3}.
+
+  %\centering
+  \begin{mdframed}[linecolor=black, topline=true, bottomline=true,
+  leftline=false, rightline=false, backgroundcolor=yellow!10!white]
+\inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{prolog}{../buscaInformada_A.pl}
+\end{mdframed}
+%\caption{\emph{buscaInformada\_A.pl} - Define a busca informada A* }
+  \label{Code:3}
+
+A fim de testar e avaliar o desempenho dos algoritmos criados, desenvolvemos um programa que cria uma classe que executa todos os códigos anteriores, isto é cria as regras do caminho especificado e executa as buscas. Assim, temos de forma acessível o ttempo que cada algoritmo levou para ser executado, o caminho resultante e a distância em metros que é a soma dos custos no estado final. Como o Prolog é limitado, esta comunicação foi feita a partir da criação de arquivos auxiliares. O código está representado na Listing~\ref{Code:4}
+
+  \begin{mdframed}[linecolor=black, topline=true, bottomline=true,leftline=false, rightline=false, backgroundcolor=yellow!10!white]
+\inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{python}{../PrologIO.py}
+\end{mdframed}
+%\caption{\emph{PrologIO.py} Recupera os resultados das buscas feitas em Prolog}
+  \label{Code:4}
+
+  \section{Apresentação dos resultados}
+  Como um terminal de query Prolog parece críptico, pouco intuitivo e amigável para o usuário final, escolhemos desenvoler uma aplicação Web que reutiliza-se todos os nosso códigos. Para isso, foi escolhido um micro-framework Web, em Python, chamado \emph{Flask}. Flask define rotas e executa uma função quando uma requisição \emph{HTTP} acontece. Assim, nosso código contido em \emph{PrologIO.py} executa e retorna uma página, com template predefinido por nós, renderizada com todos os dados relevantes contidos da classe \emph{ResultadosBusca}, de forma legível e amigável. O código em Flask é dado abaixo:
+  \begin{mdframed}[linecolor=black, topline=true, bottomline=true,leftline=false, rightline=false, backgroundcolor=yellow!10!white]
+\inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{python}{../tspserver.py}
+\end{mdframed}
+
+Escolhemos o framework front-end (CSS/Javascript) \emph{Materialize} para embelezar nossa aplicação.
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=0.8\linewidth]{}
+%   \caption{}
+%   \label{fig:}
+% \end{figure}
+\section{Conclusão}
+	Podemos concluir que, para o problema do caixeiro-viajante, a estratégia de busca A* pode ser muito cara pois o consumo de memória cresce muito a partir de 8 nós se não utilizar uma heurística para evitar a expansão de todos os caminhos (o limite do prolog para sistemas 64 bits, onde foi testado, é de 256Mb. Este limite foi expandido para 2GB e mesmo assim com 8 nós ocorreu falha por falta de memória no primeiro teste). A heurística utilizada (vizinho mais próximo) permitiu que o problema fosse resolvido com 9 nós.
+
+	Quanto a busca em profundidade, ela possui uma vantagem de não ocupar tanta memória, o que permite encontrar soluções para problemas com mais nós. No entanto, o número de possibilidades a serem testadas é um grande problema (foi possível solucionar problemas com 10 nós utilizando busca em profundidade, mas o tempo gasto ultrapassava 1 minuto, o que tornou inviável fazer diversas medições para tirar uma média de tempo.)
 \end{document}

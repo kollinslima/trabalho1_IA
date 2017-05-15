@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<style>
+  .controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="input-field">
+        <i class="material-icons prefix">terrain</i>
+        <input id="input-lugar" type="text" class="controls" placeholder="Para aonde vamos?"> 
+      </div>
+      <div class="container">
+        <div class="row s6 offset-s3">
+          <div id="type-selector" >
+            <input type="radio" name="type" id="changetype-all" checked="checked">
+            <label for="changetype-all">Tudo</label>
+
+            <input type="radio" name="type" id="changetype-establishment">
+            <label for="changetype-establishment">Estabelecimentos</label>
+
+            <input type="radio" name="type" id="changetype-address">
+            <label for="changetype-address">Endereços</label>
+
+            <input type="radio" name="type" id="changetype-geocode">
+            <label for="changetype-geocode">Cidades</label>
+          </div>
+          </br>
+        </div>
+      </div>
+      <div class="row s6 offset-s3" id="citiechips">
+      </div>
+      <div class="col s6 offset-s3">
+        <form method="post">
+          <input id="citiesresult" name="resultado" type=hidden>
+          <button class="btn waves-effect waves-light blue-grey" type="submit" name="action">Buscar
+            <i class="material-icons right">my_location</i>
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block script%}
+{{ super() }}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqDByXAJTlMMALlAg4MipodSVnRhpegFA&libraries=places"> </script>
+<script>
+
+  window.onload=function intialize(){
+    var placesresult=Array();
+    var input =/** @type {!HTMLInputElement} */(document.getElementById('input-lugar'));
+    var types = document.getElementById('type-selector');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    setupClickListener('changetype-all', []);
+    setupClickListener('changetype-address', ['address']);
+    setupClickListener('changetype-establishment', ['establishment']);
+    setupClickListener('changetype-geocode', ['geocode']);
+    function setupClickListener(id, types) {
+      var radioButton = document.getElementById(id);
+      radioButton.addEventListener('click', function() {
+        autocomplete.setTypes(types);
+      });}
+    input.addEventListener('keypress', function (e) {
+      var key = e.which || e.keyCode;
+      if (key === 13) { // 13 is enter
+        placesresult.push(input.value);
+        var t= document.createElement("div");
+        t.classList.add('chip');
+        t.innerHTML=input.value;
+        document.getElementById('citiechips').appendChild(t);
+        document.getElementById("citiesresult").value=JSON.stringify(placesresult);
+      }
+    });
+
+  }
+
+</script>
+
+{% endblock %}
+

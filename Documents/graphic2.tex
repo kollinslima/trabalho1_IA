@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{axis}[
+    xlabel=Nós,
+    ylabel=Tempo$(s)$]
+	\addplot[color=red,mark=x] file {teste1_ia.csv};
+  \addplot[color=blue,mark=*]  file {teste11_ia.csv};
+  \legend{Busca Cega Profundidade, Busca A*}
+	\end{axis}
+\end{tikzpicture}

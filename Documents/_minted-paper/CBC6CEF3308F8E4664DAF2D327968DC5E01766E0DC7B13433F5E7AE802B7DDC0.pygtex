@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZdl{} sudo pip install googlemaps
+
+\PYGZdl{} sudo pip install flask
+
+\PYGZdl{} sudo pip install unidecode
+\end{Verbatim}

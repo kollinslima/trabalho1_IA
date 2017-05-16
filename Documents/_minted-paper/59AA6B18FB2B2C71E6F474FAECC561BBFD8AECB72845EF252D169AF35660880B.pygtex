@@ -1,10 +1,8 @@
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} coding=utf\PYGZhy{}8}
 \PYG{k+kn}{import} \PYG{n+nn}{googlemaps}
 
 \PYG{k}{def} \PYG{n+nf}{extract\PYGZus{}distance\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{results}\PYG{p}{):}
     \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Filtra o resultado da api e devolve uma matriz\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-
     \PYG{n}{a}\PYG{o}{=}\PYG{p}{[]}
     \PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n}{results}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}rows\PYGZdq{}}\PYG{p}{]:}
         \PYG{n}{b}\PYG{o}{=}\PYG{p}{[]}

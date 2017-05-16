@@ -4,11 +4,14 @@
 \usepackage{amsmath}
 \usepackage{mathrsfs}
 \usepackage{amsfonts}
+\usepackage{hyperref}
 \usepackage{minted}
 \usepackage{xcolor}
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{mdframed}
+\usepackage{pgfplots}
+\usepackage{tikz}
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \begin{document}
 \newcommand*{\plogo}{\fbox{$\mathcal{ICMC}$}} % Generic publisher logo
@@ -18,7 +21,7 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
-%\centering % Center all text
+\centering % Center all text
 \vspace*{\baselineskip} % White space at the top of the page
 
 \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
@@ -60,7 +63,7 @@ Este trabalho foi desenvolvido para a disciplina SCC0630, Inteligência Artifici
   \item [Modelagem do Problema:]
 
 Consiste em como definimos o problema e analisamos suas dificuldades.
-\item [Solucao do Problema:]
+\item [Solução do Problema:]
 
 Como  foi abordado e resolvido o problema.
 \item[Apresentacao do Problema:]
@@ -97,24 +100,21 @@ Ao longo deste documento usaremos algumas definições:
 \end{description}
 	
 \newpage
+
 \section{Modelagem}
-% \begin{figure}[htpb]
-%   %\centering
-%   \includegraphics[width=0.8\linewidth]{name.ext}
-%   \caption{Name}
-%   \label{fig:1}
-% \end{figure}
+
+\begin{figure}[htpb]
+  \centering
+  \input{Diagrama1.tex}
+  \caption{Modelagem do problema em grafo}
+  \label{fig:1}
+\end{figure}
+
 A figura \ref{fig:1} mostra uma representação das cidades e suas interligações modeladas em um grafo. Cada nó do grafo representa uma cidade e as arestas são os caminhos, cada qual possui um custo associado.
 
 Para uma abordagem mais realista, foi utilizada a API do Google Maps em um script Python para obter as distâncias reais entre cidades reais. A partir deste script, são exportadas as regras para o prolog, onde foi feita a implementação da busca. Desta forma, pôde-se modelar o problema de forma dinâmica e interativa.
 
-Assim, criamos uma função que se comunica com a API do Google Maps, e extraí dela uma matriz de conectividade, que indica o custo de cada transição. O código está representado na Listing~\ref{Code:1}. 
-
-A função \mintinline{python}{places_distance_matrix()} usa o wrapper Python do google maps e envia a lista de lugares a serem percorridos e retorna a string com a resposta da API. 
-
-A função \mintinline{python}{extract_distance_matrix()} é apenas um filtro para a respota da API do googlemaps, que devolve a matrix de conectividade desejada.
-
-A função  \mintinline{python}{construct_rules()} a partir da resposta já filtrada da API constrói um arquivo com fatos necessários para a execução da busca em Prolog.
+Assim, criamos uma função que se comunica com a API do Google Maps, e extraí dela uma matriz de conectividade, que indica o custo de cada transição. O código está representado no bloco de código abaixo:
 
   %\centering
 \begin{mdframed}[linecolor=black, topline=true, bottomline=true,
@@ -122,12 +122,21 @@ A função  \mintinline{python}{construct_rules()} a partir da resposta já filt
 \inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{python}{../DistanceMatrix.py}
 \end{mdframed}
 %\caption{\emph{DistanceMatrix.py} - Constrói regras de Prolog apartir da API do Google Maps}
-  \label{Code:1}
+
+A função \mintinline{python}{places_distance_matrix()} usa o wrapper Python do google maps e envia a lista de lugares a serem percorridos e retorna a string com a resposta da API. 
+
+A função \mintinline{python}{extract_distance_matrix()} é apenas um filtro para a respota da API do googlemaps, que devolve a matrix de conectividade desejada.
+
+A função  \mintinline{python}{construct_rules()} a partir da resposta já filtrada da API constrói um arquivo com fatos necessários para a execução da busca em Prolog.
+
+
 \newpage
 \section{Solução}
 Modelado nosso problema e definido as regras, finalmente podemos começar a resolvê-lo. Desenvolvemos dois programas em Prolog que encontram o menor caminho para o TSP. O primeiro programa utiliza uma busca cega sem heurística, visitando todas as possibilidades de seu espaço de busca antes de encerrar sua execução. A segunda estratégia foi utilizar do algoritmo A* que sempre reavalia os possíveis melhores caminhos;
+
 \subsection{Busca Cega}
-Para a busca cega, foi testada tanto a busca em profundidade quanto a busca em largura para avaliar qual apresenta o melhor resultado. O código está representado na Listing~\ref{Code:2}
+Para a busca cega, foi testada tanto a busca em profundidade quanto a busca em largura para avaliar qual apresenta o melhor resultado. O código está representado no bloco abaixo:
+
   %\centering
 \begin{mdframed}[linecolor=black, topline=true, bottomline=true,
   leftline=false, rightline=false, backgroundcolor=yellow!10!white]
@@ -140,7 +149,7 @@ Para a busca cega, foi testada tanto a busca em profundidade quanto a busca em l
 Para fazer a busca informada foi utilizada a estratégia A*. Essa estratégia foi utilizada por trabalhar com caminhos, e não apenas com um resultado final, o que é ideal para o problema. Também é interessante por não retornar um resultado aproximado, mas sim um resultado ótimo, desde que seja utilizada uma função de avaliação admissível. 
 	Um ponto negativo desta estratégia é a quantidade de memória utilizada já que todos os caminhos tentados são armazenados (embora apenas um caminho esteja sendo desenvolvido por vez). Em nossos testes, não foi possível encontrar a solução para, em média, mais de 7 cidades.
   A heurística utilizada para guiar a busca A* foi a de vizinho mais próximo. Nesta, a função de avaliação é sempre zero (e portanto é admissível) e a função de custo é a distância entre as cidades. (Foi implementada também a heurística de inserção mais barata, fazendo a função de avaliação ser a distância em linha reta entre as cidades, no entanto essa apresentou uma performance pior, certamente devido à maneira como foi implementada.)
-  O código foi representado pelo Listing~\ref{Code:3}.
+  Segue o código:
 
   %\centering
   \begin{mdframed}[linecolor=black, topline=true, bottomline=true,
@@ -150,14 +159,14 @@ Para fazer a busca informada foi utilizada a estratégia A*. Essa estratégia fo
 %\caption{\emph{buscaInformada\_A.pl} - Define a busca informada A* }
   \label{Code:3}
 
-A fim de testar e avaliar o desempenho dos algoritmos criados, desenvolvemos um programa que cria uma classe que executa todos os códigos anteriores, isto é cria as regras do caminho especificado e executa as buscas. Assim, temos de forma acessível o tempo que cada algoritmo levou para ser executado, o caminho resultante e a distância em metros que é a soma dos custos no estado final. Como o Prolog é limitado, esta comunicação foi feita a partir da criação de arquivos auxiliares. O código está representado na Listing~\ref{Code:4}
+A fim de testar e avaliar o desempenho dos algoritmos criados, desenvolvemos um programa que cria uma classe que executa todos os códigos anteriores, isto é cria as regras do caminho especificado e executa as buscas. Assim, temos de forma acessível o tempo que cada algoritmo levou para ser executado, o caminho resultante e a distância em metros que é a soma dos custos no estado final. Como o Prolog é limitado, esta comunicação foi feita a partir da criação de arquivos auxiliares. O código está representado abaixo:
 
   \begin{mdframed}[linecolor=black, topline=true, bottomline=true,leftline=false, rightline=false, backgroundcolor=yellow!10!white]
 \inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{python}{../PrologIO.py}
 \end{mdframed}
 %\caption{\emph{PrologIO.py} Recupera os resultados das buscas feitas em Prolog}
   \label{Code:4}
-
+\newpage
   \section{Apresentação dos resultados}
   Como um terminal de query Prolog parece críptico, pouco intuitivo e amigável para o usuário final, escolhemos desenvoler uma aplicação Web que reutiliza-se todos os nosso códigos. Para isso, foi escolhido um micro-framework Web, em Python, chamado \emph{Flask}. Flask define rotas e executa uma função quando uma requisição \emph{HTTP} acontece. Assim, nosso código contido em \emph{PrologIO.py} executa e retorna uma página, com template predefinido por nós, renderizada com todos os dados relevantes contidos da classe \emph{ResultadosBusca}, de forma legível e amigável. O código em Flask é dado abaixo:
   \begin{mdframed}[linecolor=black, topline=true, bottomline=true,leftline=false, rightline=false, backgroundcolor=yellow!10!white]
@@ -171,13 +180,82 @@ Escolhemos o framework front-end (CSS/Javascript) \emph{Materialize} para embele
 %   \caption{}
 %   \label{fig:}
 % \end{figure}
+\section{Avaliação de Desempenho}
+Após a implementação do problema do caixeiro viajante foram realizados testes para extração dos resultados para busca cega e busca informada. Os gráficos abaixo representam dois testes realizados.
+\begin{figure}[ht]
+  \centering
+  \input{graphic1.tex}
+  \caption{Comparação no Teste 1}
+  \label{fig:2}
+\end{figure}
 
+\begin{figure}[ht]
+  \centering
+  \input{graphic2.tex}
+  \caption{Comparação no Teste 2}
+  \label{fig:3}
+\end{figure}
+
+Para o primeiro teste o custo para ir de um nó a outro foi considerado igual, dessa forma, é possível observar a partir da Figura~\ref{fig:2} que a busca em profundidade tem tempo execução mais rápido que a A*, se mostrando mais vantajosa uma vez que o A* se torna um tanto complexa para problemas com poucos nós. Além disso, neste caso a busca informada A* se comporta de maneira aproximada a busca em largura.
+
+Para o segundo teste, os custos considerados foram aleatórios para cada caminho gerando a Figura~\ref{fig:3}. Neste gráfico, o  tempo de execução dos algoritmos se inverte, a busca A* se torna mais vantajosa conforme o número de nós cresce enquanto a busca em profundidade têm tempos de execução cada vez maiores.
+É ainda importante ressaltar que para ambos os testes a busca A* é limitada em razão da memória disponível.
+
+\newpage
 \section{Conclusão}
 	Podemos concluir que, para o problema do caixeiro-viajante, a estratégia de busca A* pode ser muito cara pois o consumo de memória cresce muito a partir de 8 nós se não utilizar uma heurística para evitar a expansão de todos os caminhos (o limite do prolog para sistemas 64 bits, onde foi testado, é de 256Mb. Este limite foi expandido para 2GB e mesmo assim com 8 nós ocorreu falha por falta de memória no primeiro teste). A heurística utilizada (vizinho mais próximo) permitiu que o problema fosse resolvido com 9 nós.
 
 	Quanto a busca em profundidade, ela possui uma vantagem de não ocupar tanta memória, o que permite encontrar soluções para problemas com mais nós. No entanto, o número de possibilidades a serem testadas é um grande problema (foi possível solucionar problemas com 10 nós utilizando busca em profundidade, mas o tempo gasto ultrapassava 1 minuto, o que tornou inviável fazer diversas medições para tirar uma média de tempo.)
 
   Assim sendo, dado que limitações de memória não estão presentes, a Busca A* se mostrou superior para muitos nós enquanto a busca em profundidade é vantajosa com problemas de pequena escala ou em ambientes com memória limitada.
+\appendix
 
+\section{Instalação e Execução}
+\subsection{Instalação}
+Certifique-se que Python 3+ está instalado na sua máquina:
 
+Ubuntu-Based:
+\begin{minted}{bash}
+$ sudo apt-get install software-properties-common 
+\end{minted}
+
+ArchLinux:
+\begin{minted}{bash}
+$ sudo pacman -S python3
+\end{minted}
+
+Instale o compilador Swi Prolog, seguindo estas instruções:
+
+\url{http://www.swi-prolog.org/Download.html}
+
+Alternativamente no ArchLinux:
+\begin{minted}{bash}
+$ sudo pacman -S swi-prolog
+\end{minted}
+
+Instale o gerenciador de pacotes do Python,  \emph{Pip}, seguindo estas instruções: 
+
+\url{https://pip.pypa.io/en/stable/installing/}
+
+Em seguida, instale os módulos utilizados neste trabalho:
+\begin{minted}{bash}
+$ sudo pip install googlemaps
+
+$ sudo pip install flask
+
+$ sudo pip install unidecode
+\end{minted}
+\subsection{Execução}
+
+Na pasta principal, defina quem é a aplicação flask:
+\begin{minted}{bash}
+$ export FLASK_APP=tspserver.py
+\end{minted}
+
+Rode a aplicação:
+\begin{minted}{bash}
+$ flask run
+\end{minted}
+
+Acesse-a via browser \url{http://127.0.0.1:5000/}.
 \end{document}

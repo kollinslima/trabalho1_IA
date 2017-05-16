@@ -57,13 +57,13 @@ Pedro Henrique Fini 		\par} % Editor list
 \section{Introdução}
 Este trabalho foi desenvolvido para a disciplina SCC0630, Inteligência Artificial, ministrada pela Professora Solange Oliveira Rezende. O objetivo deste é aprofundar e confirmar o conhecimento de nós , alunos, acerca de buscas cegas e buscas informadas, assim como modelagem e solução de problemas. Como o projeto tem também viés didático, escolhemos utilizar a linguagem \emph{Prolog} como seu motor principal, pois esta foi a linguagem de programação de escolha nas aulas ministradas da disciplina. Dividimos a documentação e desenvolvimento deste projeto em três seções:
 \begin{description}
-  \item [Modelagem do Problema]:
+  \item [Modelagem do Problema:]
 
 Consiste em como definimos o problema e analisamos suas dificuldades.
-\item [Solucao do Problema]:
+\item [Solucao do Problema:]
 
 Como  foi abordado e resolvido o problema.
-\item[Apresentacao do Problema]:
+\item[Apresentacao do Problema:]
 
 Escolhas para apresentar de forma clara, coerente e interessante os resultados obtidos.  
 \end{description}
@@ -138,7 +138,7 @@ Para a busca cega, foi testada tanto a busca em profundidade quanto a busca em l
 
 \subsection{Busca Informada}
 Para fazer a busca informada foi utilizada a estratégia A*. Essa estratégia foi utilizada por trabalhar com caminhos, e não apenas com um resultado final, o que é ideal para o problema. Também é interessante por não retornar um resultado aproximado, mas sim um resultado ótimo, desde que seja utilizada uma função de avaliação admissível. 
-	Um ponto negativo desta estratégia é a quantidade de memória utilizada já que todos os caminhos tentados são armazenados (embora apenas um caminho esteja sendo desenvolvido por vez). Em nossos testes, não foi possível encontrar a solução para mais de 7 cidades.
+	Um ponto negativo desta estratégia é a quantidade de memória utilizada já que todos os caminhos tentados são armazenados (embora apenas um caminho esteja sendo desenvolvido por vez). Em nossos testes, não foi possível encontrar a solução para, em média, mais de 7 cidades.
   A heurística utilizada para guiar a busca A* foi a de vizinho mais próximo. Nesta, a função de avaliação é sempre zero (e portanto é admissível) e a função de custo é a distância entre as cidades. (Foi implementada também a heurística de inserção mais barata, fazendo a função de avaliação ser a distância em linha reta entre as cidades, no entanto essa apresentou uma performance pior, certamente devido à maneira como foi implementada.)
   O código foi representado pelo Listing~\ref{Code:3}.
 
@@ -150,7 +150,7 @@ Para fazer a busca informada foi utilizada a estratégia A*. Essa estratégia fo
 %\caption{\emph{buscaInformada\_A.pl} - Define a busca informada A* }
   \label{Code:3}
 
-A fim de testar e avaliar o desempenho dos algoritmos criados, desenvolvemos um programa que cria uma classe que executa todos os códigos anteriores, isto é cria as regras do caminho especificado e executa as buscas. Assim, temos de forma acessível o ttempo que cada algoritmo levou para ser executado, o caminho resultante e a distância em metros que é a soma dos custos no estado final. Como o Prolog é limitado, esta comunicação foi feita a partir da criação de arquivos auxiliares. O código está representado na Listing~\ref{Code:4}
+A fim de testar e avaliar o desempenho dos algoritmos criados, desenvolvemos um programa que cria uma classe que executa todos os códigos anteriores, isto é cria as regras do caminho especificado e executa as buscas. Assim, temos de forma acessível o tempo que cada algoritmo levou para ser executado, o caminho resultante e a distância em metros que é a soma dos custos no estado final. Como o Prolog é limitado, esta comunicação foi feita a partir da criação de arquivos auxiliares. O código está representado na Listing~\ref{Code:4}
 
   \begin{mdframed}[linecolor=black, topline=true, bottomline=true,leftline=false, rightline=false, backgroundcolor=yellow!10!white]
 \inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{python}{../PrologIO.py}
@@ -171,8 +171,13 @@ Escolhemos o framework front-end (CSS/Javascript) \emph{Materialize} para embele
 %   \caption{}
 %   \label{fig:}
 % \end{figure}
+
 \section{Conclusão}
 	Podemos concluir que, para o problema do caixeiro-viajante, a estratégia de busca A* pode ser muito cara pois o consumo de memória cresce muito a partir de 8 nós se não utilizar uma heurística para evitar a expansão de todos os caminhos (o limite do prolog para sistemas 64 bits, onde foi testado, é de 256Mb. Este limite foi expandido para 2GB e mesmo assim com 8 nós ocorreu falha por falta de memória no primeiro teste). A heurística utilizada (vizinho mais próximo) permitiu que o problema fosse resolvido com 9 nós.
 
 	Quanto a busca em profundidade, ela possui uma vantagem de não ocupar tanta memória, o que permite encontrar soluções para problemas com mais nós. No entanto, o número de possibilidades a serem testadas é um grande problema (foi possível solucionar problemas com 10 nós utilizando busca em profundidade, mas o tempo gasto ultrapassava 1 minuto, o que tornou inviável fazer diversas medições para tirar uma média de tempo.)
+
+  Assim sendo, dado que limitações de memória não estão presentes, a Busca A* se mostrou superior para muitos nós enquanto a busca em profundidade é vantajosa com problemas de pequena escala ou em ambientes com memória limitada.
+
+
 \end{document}

@@ -1,9 +1,7 @@
-# coding=utf-8
 import googlemaps
 
 def extract_distance_matrix(results):
     """ Filtra o resultado da api e devolve uma matriz"""
-
     a=[]
     for row in results["rows"]:
         b=[]

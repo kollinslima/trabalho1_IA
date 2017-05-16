@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.5.1)  16 MAY 2017 00:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.1)  16 MAY 2017 07:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -453,7 +453,7 @@ Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
@@ -529,20 +529,12 @@ LaTeX Info: Redefining \pageref on input line 6432.
 \c@Hfootnote=\count107
 )
 
-Package hyperref Message: Driver (default): hdvips.
+Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/share/texmf-dist/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2017/03/14 v6.85a Hyperref driver for dvips
-
-(/usr/share/texmf-dist/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2017/03/14 v6.85a Hyperref definitions for pdfmark specials
-\pdf@docset=\toks22
-\pdf@box=\box28
-\pdf@toks=\toks23
-\pdf@defaulttoks=\toks24
-\HyField@AnnotCount=\count108
-\Fld@listcount=\count109
-\c@bookmark@seq@number=\count110
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+\Fld@listcount=\count108
+\c@bookmark@seq@number=\count109
 
 (/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
@@ -550,7 +542,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip46
-)) (./minted.sty
+) (./minted.sty
 Package: minted 2017/02/10 v2.4.2dev Yet another Pygments shim for LaTeX
 
 (/usr/share/texmf/tex/latex/fvextra/fvextra.sty
@@ -562,18 +554,18 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count111
+\etb@tempcnta=\count110
 )
 (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count112
+\FV@CodeLineNo=\count111
 \FV@InFile=\read1
-\FV@TabBox=\box29
-\c@FancyVerbLine=\count113
-\FV@StepNumber=\count114
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count112
+\FV@StepNumber=\count113
 \FV@OutFile=\write3
 ) (/usr/share/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
@@ -581,56 +573,56 @@ tim
 )
 (/usr/share/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count115
-\output=\toks25
-\linenoprevgraf=\count116
+\linenopenalty=\count114
+\output=\toks22
+\linenoprevgraf=\count115
 \linenumbersep=\dimen117
 \linenumberwidth=\dimen118
-\c@linenumber=\count117
-\c@pagewiselinenumber=\count118
-\c@LN@truepage=\count119
-\c@internallinenumber=\count120
-\c@internallinenumbers=\count121
+\c@linenumber=\count116
+\c@pagewiselinenumber=\count117
+\c@LN@truepage=\count118
+\c@internallinenumber=\count119
+\c@internallinenumbers=\count120
 \quotelinenumbersep=\dimen119
 \bframerule=\dimen120
 \bframesep=\dimen121
-\bframebox=\box30
+\bframebox=\box29
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count122
-\c@FV@TrueTabCounter=\count123
-\FV@TabBox@Group=\box31
+\c@FV@TrueTabGroupLevel=\count121
+\c@FV@TrueTabCounter=\count122
+\FV@TabBox@Group=\box30
 \FV@TmpLength=\skip47
-\c@FV@HighlightLinesStart=\count124
-\c@FV@HighlightLinesStop=\count125
+\c@FV@HighlightLinesStart=\count123
+\c@FV@HighlightLinesStop=\count124
 \FV@BreakIndent=\dimen122
 \FV@BreakSymbolSepLeft=\dimen123
 \FV@BreakSymbolSepRight=\dimen124
 \FV@BreakSymbolIndentLeft=\dimen125
 \FV@BreakSymbolIndentRight=\dimen126
-\c@FancyVerbLineBreakLast=\count126
-\FV@LineBox=\box32
-\FV@LineIndentBox=\box33
+\c@FancyVerbLineBreakLast=\count125
+\FV@LineBox=\box31
+\FV@LineIndentBox=\box32
 )
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count127
-\float@exts=\toks26
-\float@box=\box34
-\@float@everytoks=\toks27
-\@floatcapt=\box35
+\c@float@type=\count126
+\float@exts=\toks23
+\float@box=\box33
+\@float@everytoks=\toks24
+\@floatcapt=\box34
 )
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count128
-\calc@Bcount=\count129
+\calc@Acount=\count127
+\calc@Bcount=\count128
 \calc@Adimen=\dimen127
 \calc@Bdimen=\dimen128
 \calc@Askip=\skip48
 \calc@Bskip=\skip49
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count130
+\calc@Ccount=\count129
 \calc@Cskip=\skip50
 )
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
@@ -652,8 +644,8 @@ runsystem(rm -- "paper.w18")...executed.
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write4
-\integerpart=\count131
-\decimalpart=\count132
+\integerpart=\count130
+\decimalpart=\count131
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
@@ -666,12 +658,12 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameSep=\dimen132
 )
 \minted@appexistsfile=\read2
-\minted@bgbox=\box36
+\minted@bgbox=\box35
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count133
-\c@minted@pygmentizecounter=\count134
-\@float@every@listing=\toks28
-\c@listing=\count135
+\c@minted@FancyVerbLineTemp=\count132
+\c@minted@pygmentizecounter=\count133
+\@float@every@listing=\toks25
+\c@listing=\count134
 )
 runsystem(mkdir -p _minted-paper)...executed.
 
@@ -682,12 +674,14 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: dvips.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/share/texmf-dist/tex/latex/graphics-def/dvips.def
-File: dvips.def 2016/07/10 v3.1a Driver-dependent file (DPC,SPQR)
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+\Gread@gobject=\count135
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
@@ -726,7 +720,7 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 )
 \Gin@req@height=\dimen140
 \Gin@req@width=\dimen141
@@ -793,12 +787,12 @@ Package: expl3 2017/04/01 L3 programming layer (code)
 \l__sort_A_int=\count169
 \l__sort_B_int=\count170
 \l__sort_C_int=\count171
-\c_empty_box=\box37
-\l_tmpa_box=\box38
-\l_tmpb_box=\box39
-\g_tmpa_box=\box40
-\g_tmpb_box=\box41
-\l__coffin_internal_box=\box42
+\c_empty_box=\box36
+\l_tmpa_box=\box37
+\l_tmpb_box=\box38
+\g_tmpa_box=\box39
+\g_tmpb_box=\box40
+\l__coffin_internal_box=\box41
 \l__coffin_internal_dim=\dimen148
 \l__coffin_offset_x_dim=\dimen149
 \l__coffin_offset_y_dim=\dimen150
@@ -806,14 +800,14 @@ Package: expl3 2017/04/01 L3 programming layer (code)
 \l__coffin_y_dim=\dimen152
 \l__coffin_x_prime_dim=\dimen153
 \l__coffin_y_prime_dim=\dimen154
-\c_empty_coffin=\box43
-\l__coffin_aligned_coffin=\box44
-\l__coffin_aligned_internal_coffin=\box45
-\l_tmpa_coffin=\box46
-\l_tmpb_coffin=\box47
-\l__coffin_display_coffin=\box48
-\l__coffin_display_coord_coffin=\box49
-\l__coffin_display_pole_coffin=\box50
+\c_empty_coffin=\box42
+\l__coffin_aligned_coffin=\box43
+\l__coffin_aligned_internal_coffin=\box44
+\l_tmpa_coffin=\box45
+\l_tmpb_coffin=\box46
+\l__coffin_display_coffin=\box47
+\l__coffin_display_coord_coffin=\box48
+\l__coffin_display_pole_coffin=\box49
 \l__coffin_display_offset_dim=\dimen155
 \l__coffin_display_x_dim=\dimen156
 \l__coffin_display_y_dim=\dimen157
@@ -825,7 +819,7 @@ Package: expl3 2017/04/01 L3 programming layer (code)
 \l__box_bottom_new_dim=\dimen163
 \l__box_left_new_dim=\dimen164
 \l__box_right_new_dim=\dimen165
-\l__box_internal_box=\box51
+\l__box_internal_box=\box50
 \l__coffin_bounding_shift_dim=\dimen166
 \l__coffin_left_corner_dim=\dimen167
 \l__coffin_right_corner_dim=\dimen168
@@ -834,15 +828,17 @@ Package: expl3 2017/04/01 L3 programming layer (code)
 \l__coffin_scaled_total_height_dim=\dimen171
 \l__coffin_scaled_width_dim=\dimen172
 )
-(/usr/share/texmf-dist/tex/latex/l3kernel/l3dvips.def
-File: l3dvips.def 2017/03/18 v L3 Experimental driver: dvips
+(/usr/share/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count172
+\l__driver_tmp_box=\box51
 ))
 Package: xparse 2017/04/01 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count172
-\g__xparse_grabber_int=\count173
-\l__xparse_m_args_int=\count174
-\l__xparse_mandatory_args_int=\count175
-\l__xparse_v_nesting_int=\count176
+\l__xparse_current_arg_int=\count173
+\g__xparse_grabber_int=\count174
+\l__xparse_m_args_int=\count175
+\l__xparse_mandatory_args_int=\count176
+\l__xparse_v_nesting_int=\count177
 )
 (/usr/share/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
 Package: zref-abspage 2016/05/21 v2.26 Module abspage for zref (HO)
@@ -853,14 +849,14 @@ Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-\c@abspage=\count177
+\c@abspage=\count178
 Package zref Info: New property: abspage on input line 62.
 )
 (/usr/share/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip58
-\c@mdf@globalstyle@cnt=\count178
+\c@mdf@globalstyle@cnt=\count179
 \mdf@skipabove@length=\skip59
 \mdf@skipbelow@length=\skip60
 \mdf@leftmargin@length=\skip61
@@ -936,7 +932,7 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip122
 \mdfsubtitleheight=\skip123
 \mdfsubsubtitleheight=\skip124
-\c@mdfcountframes=\count179
+\c@mdfcountframes=\count180
 
 ****** mdframed patching \endmdf@trivlist
 
@@ -952,10 +948,10 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 . 
 . Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
 .................................................
-\mdf@envdepth=\count180
-\c@mdf@env@i=\count181
-\c@mdf@env@ii=\count182
-\c@mdf@zref@counter=\count183
+\mdf@envdepth=\count181
+\c@mdf@env@i=\count182
+\c@mdf@env@ii=\count183
+\c@mdf@zref@counter=\count184
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty
@@ -966,7 +962,7 @@ Package: pgfplots 2016/08/10 v1.14 Data Visualization (1.14)
 (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks29
+\pgfutil@everybye=\toks26
 \pgfutil@tempdima=\dimen173
 \pgfutil@tempdimb=\dimen174
 
@@ -988,11 +984,11 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks30
-\pgfkeys@temptoks=\toks31
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks32
+\pgfkeys@tmptoks=\toks29
 ))
 \pgf@x=\dimen175
 \pgf@y=\dimen176
@@ -1004,30 +1000,31 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \pgf@yc=\dimen182
 \w@pgf@writea=\write6
 \r@pgf@reada=\read3
-\c@pgf@counta=\count184
-\c@pgf@countb=\count185
-\c@pgf@countc=\count186
-\c@pgf@countd=\count187
-\t@pgf@toka=\toks33
-\t@pgf@tokb=\toks34
-\t@pgf@tokc=\toks35
+\c@pgf@counta=\count185
+\c@pgf@countb=\count186
+\c@pgf@countc=\count187
+\c@pgf@countd=\count188
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
 
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
-Driver file for pgf: pgfsys-dvips.def
+Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.def
-File: pgfsys-dvips.def 2014/07/09  (rcs-revision 1.25)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-postscript.def
-File: pgfsys-common-postscript.def 2008/10/01  (rcs-revision 1.22)
-\pgf@objectcount=\count188
-))) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count189
 \pgfsyssoftpath@bigbuffer@items=\count190
-) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
@@ -1040,9 +1037,9 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 \pgfmath@dimen=\dimen183
 \pgfmath@count=\count191
 \pgfmath@box=\box58
-\pgfmath@toks=\toks36
-\pgfmath@stack@operand=\toks37
-\pgfmath@stack@operation=\toks38
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
 )
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -1158,8 +1155,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen266
 \pgffor@skip=\dimen267
-\pgffor@stack=\toks39
-\pgffor@toks=\toks40
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
@@ -1197,9 +1194,9 @@ topaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 ))) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.code.tex (/usr/share/tex
 mf-dist/tex/latex/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks41
-\t@pgfplots@tokb=\toks42
-\t@pgfplots@tokc=\toks43
+\t@pgfplots@toka=\toks38
+\t@pgfplots@tokb=\toks39
+\t@pgfplots@tokc=\toks40
 \pgfplots@tmpa=\dimen275
 \c@pgfplots@coordindex=\count270
 \c@pgfplots@scanlineindex=\count271
@@ -1229,7 +1226,7 @@ t.code.tex)
 )
 (/usr/share/texmf-dist/tex/latex/pgfplots/numtable/pgfplotstableshared.code.tex
 \c@pgfplotstable@counta=\count274
-\t@pgfplotstable@a=\toks44
+\t@pgfplotstable@a=\toks41
 )
 (/usr/share/texmf-dist/tex/latex/pgfplots/liststructure/pgfplotsdeque.code.tex)
 (/usr/share/texmf-dist/tex/latex/pgfplots/util/pgfplotsbinary.code.tex
@@ -1240,7 +1237,7 @@ ode.tex
 \c@pgfplotslibrarysurf@no=\count275
 
 (/usr/share/texmf-dist/tex/latex/pgfplots/sys/pgflibrarypgfplots.surfshading.pg
-fsys-dvips.def)))
+fsys-pdftex.def)))
 (/usr/share/texmf-dist/tex/latex/pgfplots/util/pgfplotscolormap.code.tex
 (/usr/share/texmf-dist/tex/latex/pgfplots/util/pgfplotscolor.code.tex))
 (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplotsstackedplots.code.tex)
@@ -1297,22 +1294,22 @@ runsystem(rm paper.aex)...executed.
  (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 \AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring OFF on input line 16.
+Package hyperref Info: Link coloring OFF on input line 17.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1321,69 +1318,100 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count278
 )
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
  (./paper.out)
 (./paper.out)
 \@outlinefile=\write7
 \openout7 = `paper.out'.
 
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count279
+\scratchdimen=\dimen289
+\scratchbox=\box70
+\nofMPsegments=\count280
+\nofMParguments=\count281
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count282
+\MPscratchDim=\dimen290
+\MPnumerator=\count283
+\makeMPintoPDFobject=\count284
+\everyMPtoPDFconversion=\toks43
+) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
+
+ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.14} into 
 your preamble.
- on input line 16.
+ on input line 17.
 
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 58.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 59.
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 59.
+(babel)             in language append on input line 60.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 59.
+(babel)             in language append on input line 60.
  [1
 
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 60.
+(babel)             in language append on input line 61.
 
-Overfull \hbox (0.22809pt too wide) in paragraph at lines 65--66
+Overfull \hbox (0.22809pt too wide) in paragraph at lines 66--67
 []\OT1/cmr/m/n/12 Consiste em como de-fi-ni-mos o pro-blema e ana-
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 84.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 85.
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language append on input line 97.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language append on input line 97.
  [2]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language append on input line 103.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language append on input line 103.
  [3]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 104.
+(babel)             in language append on input line 105.
  (./Diagrama1.tex
 \du=\skip125
 )
@@ -1395,9 +1423,9 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 123.
+(babel)             in language append on input line 124.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 123.
+(babel)             in language append on input line 124.
  [4]
 \openout5 = `paper.pyg'.
 
@@ -1415,68 +1443,74 @@ BB.pygtex)
 (./_minted-paper/6160E97D63EEB3475844E21698F2C32133094015A364B13A49F9BA35FF3EBF
 BB.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 133.
+(babel)             in language append on input line 134.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 133.
+(babel)             in language append on input line 134.
  [5]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language append on input line 135.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 137.
+(babel)             in language append on input line 138.
 
 (./_minted-paper/D4088738C7B4C5303CDAD8E8169FDB53432583D26EB309D37502060DFA4E3D
 73.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 144.
+(babel)             in language append on input line 145.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 144.
+(babel)             in language append on input line 145.
  [6]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 148.
+(babel)             in language append on input line 149.
 
 (./_minted-paper/3609C70FC5B3294F78EEBAF8424D0D7A24EAE9E8FB498F5CD73E777A128D25
 39.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language append on input line 159.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language append on input line 159.
  [7]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language append on input line 159.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language append on input line 159.
  [8]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language append on input line 159.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language append on input line 159.
  [9]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language append on input line 159.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 158.
+(babel)             in language append on input line 159.
  [10]
 (./_minted-paper/0F8F45D4249F8193527B68DBC9A01F701009BE9DA428A6D5EABB297FD244A6
 72.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 166.
+(babel)             in language append on input line 167.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 166.
+(babel)             in language append on input line 167.
  [11]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 166.
+(babel)             in language append on input line 167.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 166.
+(babel)             in language append on input line 167.
  [12]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 169.
+(babel)             in language append on input line 170.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 169.
+(babel)             in language append on input line 170.
  [13]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 170.
+(babel)             in language append on input line 171.
+ <tela1.png, id=121, 785.93625pt x 391.4625pt>
+File: tela1.png Graphic file (type png)
 
-Overfull \hbox (0.77928pt too wide) in paragraph at lines 171--172
+<use tela1.png>
+Package pdftex.def Info: tela1.png used on input line 174.
+(pdftex.def)             Requested size: 312.00119pt x 155.40549pt.
+
+Overfull \hbox (0.77928pt too wide) in paragraph at lines 178--179
 \OT1/cmr/m/n/12 Como um ter-mi-nal de query Pro-log pa-rece cr^^S^^Pptico, pouc
 o in-tui-tivo e amig^^Savel
  []
@@ -1485,7 +1519,28 @@ o in-tui-tivo e amig^^Savel
 (./_minted-paper/79C166EF9BFDCB2D0B856B5C26850B439E92507E41EDD59BDD172C643F52A1
 73.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 183.
+(babel)             in language append on input line 181.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 181.
+ [14 <./tela1.png>] <tela2.png, id=129, 785.93625pt x 427.5975pt>
+File: tela2.png Graphic file (type png)
+
+<use tela2.png>
+Package pdftex.def Info: tela2.png used on input line 187.
+(pdftex.def)             Requested size: 312.00119pt x 169.75061pt.
+ <tela3.png, id=130, 775.89874pt x 919.435pt>
+File: tela3.png Graphic file (type png)
+ <use tela3.png>
+Package pdftex.def Info: tela3.png used on input line 193.
+(pdftex.def)             Requested size: 312.00119pt x 369.71758pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 203.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 203.
+
+[15 <./tela2.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 203.
  (./graphic1.tex
 PGFPlots: reading {teste2_ia.csv}
 PGFPlots: reading {teste22_ia.csv}
@@ -1494,26 +1549,27 @@ PGFPlots: reading {teste1_ia.csv}
 PGFPlots: reading {teste11_ia.csv}
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 200.
+(babel)             in language append on input line 223.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 200.
- [14]
+(babel)             in language append on input line 223.
+ [16 <./tela3.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 204.
+(babel)             in language append on input line 224.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 204.
- [15]
+(babel)             in language append on input line 224.
+
+[17]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 205.
+(babel)             in language append on input line 225.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 213.
+(babel)             in language append on input line 233.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language append on input line 234.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 217.
+(babel)             in language append on input line 237.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 217.
- [16]
+(babel)             in language append on input line 237.
+ [18]
 \openout3 = `paper.pyg'.
 
 
@@ -1535,7 +1591,7 @@ C0.pygtex)
 (./_minted-paper/CBC6CEF3308F8E4664DAF2D327968DC5E01766E0DC7B13433F5E7AE802B7DD
 C0.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 248.
+(babel)             in language append on input line 268.
 \openout3 = `paper.pyg'.
 
 
@@ -1547,28 +1603,49 @@ C0.pygtex)
 (./_minted-paper/CF14777326518852F25BCFAAFAC272C8E01766E0DC7B13433F5E7AE802B7DD
 C0.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 261.
+(babel)             in language append on input line 281.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 261.
- [17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 261.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 261.
+(babel)             in language append on input line 281.
+ [19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 281.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 281.
  (./paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 261.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 261.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 281.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 281.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: CB5CCDB64C08B6700CAD2817F47BFA07;646.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 runsystem(rm paper.pyg)...executed.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 261.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
  ) 
 Here is how much of TeX's memory you used:
- 38023 strings out of 493014
- 875509 string characters out of 6139344
- 1330505 words of memory out of 5000000
- 40979 multiletter control sequences out of 15000+600000
+ 38576 strings out of 493013
+ 883808 string characters out of 6139318
+ 1329744 words of memory out of 5000000
+ 41478 multiletter control sequences out of 15000+600000
  15066 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,17n,96p,10415b,2235s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,20n,96p,10412b,2227s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on paper.pdf (19 pages, 290738 bytes).
+PDF statistics:
+ 222 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on paper.dvi (17 pages, 128484 bytes).

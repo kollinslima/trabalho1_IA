@@ -10,6 +10,7 @@
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{mdframed}
+\usepackage{float}
 \usepackage{pgfplots}
 \usepackage{tikz}
 \newenvironment{code}{\captionsetup{type=listing}}{}
@@ -168,12 +169,31 @@ A fim de testar e avaliar o desempenho dos algoritmos criados, desenvolvemos um 
   \label{Code:4}
 \newpage
   \section{Apresentação dos resultados}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{tela1.png}
+  \caption{Interface do usuário com autocomplete}
+  \label{fig:tela1}
+\end{figure}
   Como um terminal de query Prolog parece críptico, pouco intuitivo e amigável para o usuário final, escolhemos desenvoler uma aplicação Web que reutiliza-se todos os nosso códigos. Para isso, foi escolhido um micro-framework Web, em Python, chamado \emph{Flask}. Flask define rotas e executa uma função quando uma requisição \emph{HTTP} acontece. Assim, nosso código contido em \emph{PrologIO.py} executa e retorna uma página, com template predefinido por nós, renderizada com todos os dados relevantes contidos da classe \emph{ResultadosBusca}, de forma legível e amigável. O código em Flask é dado abaixo:
   \begin{mdframed}[linecolor=black, topline=true, bottomline=true,leftline=false, rightline=false, backgroundcolor=yellow!10!white]
 \inputminted[tabsize=2,linenos=true,fontsize=\footnotesize,breaklines=true,breakafter=format]{python}{../tspserver.py}
 \end{mdframed}
 
 Escolhemos o framework front-end (CSS/Javascript) \emph{Materialize} para embelezar nossa aplicação.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{tela2.png}
+  \caption{Nós a se percorrer já selecionados (o primeiro selecionado é o inicial)}
+  \label{fig:tela2}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{tela3.png}
+  \caption{Busca realizada e resultados}
+  \label{fig:tela3}
+\end{figure}
 % \begin{figure}[ht]
 %   \centering
 %   \includegraphics[width=0.8\linewidth]{}

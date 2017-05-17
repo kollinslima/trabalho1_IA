@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.1)  16 MAY 2017 07:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.1)  16 MAY 2017 21:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1386,32 +1386,40 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 60.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 61.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./paper.toc)
+\tf@toc=\write8
+\openout8 = `paper.toc'.
 
-Overfull \hbox (0.22809pt too wide) in paragraph at lines 66--67
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 62.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 62.
+ [2]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 63.
+
+Overfull \hbox (0.22809pt too wide) in paragraph at lines 68--69
 []\OT1/cmr/m/n/12 Consiste em como de-fi-ni-mos o pro-blema e ana-
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 85.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 97.
+(babel)             in language append on input line 99.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 97.
- [2]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 103.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 103.
+(babel)             in language append on input line 99.
  [3]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 105.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 105.
+ [4]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 107.
  (./Diagrama1.tex
 \du=\skip125
 )
@@ -1423,10 +1431,10 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 124.
+(babel)             in language append on input line 126.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 124.
- [4]
+(babel)             in language append on input line 126.
+ [5]
 \openout5 = `paper.pyg'.
 
 
@@ -1443,74 +1451,74 @@ BB.pygtex)
 (./_minted-paper/6160E97D63EEB3475844E21698F2C32133094015A364B13A49F9BA35FF3EBF
 BB.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 134.
+(babel)             in language append on input line 136.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 134.
- [5]
+(babel)             in language append on input line 136.
+ [6]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 135.
+(babel)             in language append on input line 137.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 138.
+(babel)             in language append on input line 140.
 
 (./_minted-paper/D4088738C7B4C5303CDAD8E8169FDB53432583D26EB309D37502060DFA4E3D
 73.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 145.
+(babel)             in language append on input line 147.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 145.
- [6]
+(babel)             in language append on input line 147.
+ [7]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 149.
+(babel)             in language append on input line 151.
 
 (./_minted-paper/3609C70FC5B3294F78EEBAF8424D0D7A24EAE9E8FB498F5CD73E777A128D25
 39.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 159.
+(babel)             in language append on input line 161.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 159.
- [7]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 159.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 159.
+(babel)             in language append on input line 161.
  [8]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 159.
+(babel)             in language append on input line 161.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 159.
+(babel)             in language append on input line 161.
  [9]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 159.
+(babel)             in language append on input line 161.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 159.
+(babel)             in language append on input line 161.
  [10]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 161.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 161.
+ [11]
 (./_minted-paper/0F8F45D4249F8193527B68DBC9A01F701009BE9DA428A6D5EABB297FD244A6
 72.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 167.
+(babel)             in language append on input line 169.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 167.
- [11]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 167.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 167.
+(babel)             in language append on input line 169.
  [12]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 170.
+(babel)             in language append on input line 169.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 170.
+(babel)             in language append on input line 169.
  [13]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 171.
- <tela1.png, id=121, 785.93625pt x 391.4625pt>
+(babel)             in language append on input line 172.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 172.
+ [14]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 173.
+ <tela1.png, id=137, 785.93625pt x 391.4625pt>
 File: tela1.png Graphic file (type png)
 
 <use tela1.png>
-Package pdftex.def Info: tela1.png used on input line 174.
+Package pdftex.def Info: tela1.png used on input line 176.
 (pdftex.def)             Requested size: 312.00119pt x 155.40549pt.
 
-Overfull \hbox (0.77928pt too wide) in paragraph at lines 178--179
+Overfull \hbox (0.77928pt too wide) in paragraph at lines 180--181
 \OT1/cmr/m/n/12 Como um ter-mi-nal de query Pro-log pa-rece cr^^S^^Pptico, pouc
 o in-tui-tivo e amig^^Savel
  []
@@ -1519,57 +1527,57 @@ o in-tui-tivo e amig^^Savel
 (./_minted-paper/79C166EF9BFDCB2D0B856B5C26850B439E92507E41EDD59BDD172C643F52A1
 73.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 181.
+(babel)             in language append on input line 183.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 181.
- [14 <./tela1.png>] <tela2.png, id=129, 785.93625pt x 427.5975pt>
+(babel)             in language append on input line 183.
+ [15 <./tela1.png>] <tela2.png, id=145, 785.93625pt x 427.5975pt>
 File: tela2.png Graphic file (type png)
 
 <use tela2.png>
-Package pdftex.def Info: tela2.png used on input line 187.
+Package pdftex.def Info: tela2.png used on input line 189.
 (pdftex.def)             Requested size: 312.00119pt x 169.75061pt.
- <tela3.png, id=130, 775.89874pt x 919.435pt>
+ <tela3.png, id=146, 775.89874pt x 919.435pt>
 File: tela3.png Graphic file (type png)
  <use tela3.png>
-Package pdftex.def Info: tela3.png used on input line 193.
+Package pdftex.def Info: tela3.png used on input line 195.
 (pdftex.def)             Requested size: 312.00119pt x 369.71758pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 203.
+(babel)             in language append on input line 205.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 203.
+(babel)             in language append on input line 205.
 
-[15 <./tela2.png>]
+[16 <./tela2.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 203.
- (./graphic1.tex
-PGFPlots: reading {teste2_ia.csv}
-PGFPlots: reading {teste22_ia.csv}
-) (./graphic2.tex
+(babel)             in language append on input line 205.
+ (./graphic2.tex
 PGFPlots: reading {teste1_ia.csv}
 PGFPlots: reading {teste11_ia.csv}
+) (./graphic1.tex
+PGFPlots: reading {teste2_ia.csv}
+PGFPlots: reading {teste22_ia.csv}
 )
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 223.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 223.
- [16 <./tela3.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 224.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 224.
-
-[17]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 225.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 233.
+(babel)             in language append on input line 225.
+ [17 <./tela3.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 234.
+(babel)             in language append on input line 226.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 237.
+(babel)             in language append on input line 226.
+
+[18]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 237.
- [18]
+(babel)             in language append on input line 227.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 235.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 236.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 239.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 239.
+ [19]
 \openout3 = `paper.pyg'.
 
 
@@ -1591,7 +1599,7 @@ C0.pygtex)
 (./_minted-paper/CBC6CEF3308F8E4664DAF2D327968DC5E01766E0DC7B13433F5E7AE802B7DD
 C0.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 268.
+(babel)             in language append on input line 270.
 \openout3 = `paper.pyg'.
 
 
@@ -1603,29 +1611,25 @@ C0.pygtex)
 (./_minted-paper/CF14777326518852F25BCFAAFAC272C8E01766E0DC7B13433F5E7AE802B7DD
 C0.pygtex)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 281.
+(babel)             in language append on input line 283.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 281.
- [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 281.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 281.
+(babel)             in language append on input line 283.
+ [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 281.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 281.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: CB5CCDB64C08B6700CAD2817F47BFA07;646.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 runsystem(rm paper.pyg)...executed.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
  ) 
 Here is how much of TeX's memory you used:
- 38576 strings out of 493013
- 883808 string characters out of 6139318
- 1329744 words of memory out of 5000000
+ 38581 strings out of 493013
+ 883849 string characters out of 6139318
+ 1329745 words of memory out of 5000000
  41478 multiletter control sequences out of 15000+600000
  15066 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1642,10 +1646,10 @@ ts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 ></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on paper.pdf (19 pages, 290738 bytes).
+Output written on paper.pdf (20 pages, 292433 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
